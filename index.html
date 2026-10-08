@@ -1,0 +1,5009 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Safe non-enumerable setter wrapper for window.fetch that never pollutes Object.prototype
+      (function () {
+        try {
+          if (typeof window !== 'undefined' && window.fetch) {
+            var activeFetch = window.fetch.bind(window);
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function () {
+                  return activeFetch;
+                },
+                set: function (newFetch) {
+                  activeFetch = newFetch;
+                },
+                configurable: true,
+                enumerable: false,
+              });
+            } catch (err) {}
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title>ADAM BIYADI // Multimedia &amp; Creative Director Portfolio</title>
+    <meta name="description" content="Adam Biyadi — Multimedia & Creative Director specializing in cinematic video production, high-end visual design, CGI/neural VFX, and interactive digital experiences." />
+    <meta property="og:title" content="ADAM BIYADI // Multimedia &amp; Creative Director Portfolio" />
+    <meta property="og:description" content="Adam Biyadi — Multimedia & Creative Director specializing in cinematic video production, high-end visual design, CGI/neural VFX, and interactive digital experiences." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/b1314443e183d1cdd77049077c46facc?family=Orbitron-Medium" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Day Mode (Light Theme) */
+      :root {
+        --bg-primary: #F0F3F7;
+        --bg-secondary: #E2E8F0;
+        --hero-bg: #E3E8EE;
+        --text-primary: #0F172A;
+        --cream: #0F172A;
+        --muted: rgba(15, 23, 42, 0.9);
+        --label: rgba(15, 23, 42, 0.6);
+        --accent: #0284C7;
+        --accent-glow: #00d2ff;
+        
+        /* Premium Frosted Glassmorphism Tokens */
+        --glass-bg: rgba(255, 255, 255, 0.18);
+        --glass-card-bg: rgba(255, 255, 255, 0.16);
+        --glass-border: rgba(255, 255, 255, 0.35);
+        --glass-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
+        --glass-inner-border: rgba(15, 23, 42, 0.1);
+        --glass-track: rgba(15, 23, 42, 0.1);
+        --glass-text-main: #0B132B;
+        --glass-text-muted: rgba(11, 19, 43, 0.76);
+        --glass-text-label: rgba(11, 19, 43, 0.6);
+        --glass-badge-bg: rgba(2, 132, 199, 0.14);
+        --glass-badge-border: rgba(2, 132, 199, 0.28);
+        
+        --btn-border: rgba(15, 23, 42, 0.45);
+        --btn-hover: rgba(15, 23, 42, 0.08);
+        --btn-text: #0F172A;
+        --heading-shadow: 0 2px 24px rgba(255, 255, 255, 0.85);
+        --page-color: rgba(15, 23, 42, 0.78);
+        --toggle-bg: rgba(255, 255, 255, 0.25);
+        --toggle-border: rgba(255, 255, 255, 0.4);
+        --toggle-hover: rgba(255, 255, 255, 0.4);
+        --toggle-text: #0B132B;
+        --toggle-glow: 0 0 16px rgba(0, 210, 255, 0.28);
+        --status-green: #059669;
+        --section-ambient: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(2, 132, 199, 0.08), transparent 70%);
+      }
+
+      /* Night Mode (Dark Theme) */
+      [data-theme="dark"],
+      .dark {
+        --bg-primary: #0E0A08;
+        --bg-secondary: #18120F;
+        --hero-bg: #0E0A08;
+        --text-primary: #FBDBAF;
+        --cream: #FBDBAF;
+        --muted: rgba(251, 219, 175, 0.92);
+        --label: rgba(251, 219, 175, 0.52);
+        --accent: #0ea5e9;
+        --accent-glow: #00d2ff;
+        
+        /* Premium Frosted Glassmorphism Tokens */
+        --glass-bg: rgba(14, 10, 8, 0.42);
+        --glass-card-bg: rgba(20, 15, 12, 0.45);
+        --glass-border: rgba(255, 255, 255, 0.24);
+        --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+        --glass-inner-border: rgba(251, 219, 175, 0.14);
+        --glass-track: rgba(251, 219, 175, 0.14);
+        --glass-text-main: #FBDBAF;
+        --glass-text-muted: rgba(251, 219, 175, 0.78);
+        --glass-text-label: rgba(251, 219, 175, 0.55);
+        --glass-badge-bg: rgba(14, 165, 233, 0.18);
+        --glass-badge-border: rgba(14, 165, 233, 0.35);
+
+        --btn-border: rgba(251, 219, 175, 0.55);
+        --btn-hover: rgba(251, 219, 175, 0.1);
+        --btn-text: #FBDBAF;
+        --heading-shadow: 0 2px 28px rgba(0, 0, 0, 0.22);
+        --page-color: rgba(251, 219, 175, 0.78);
+        --toggle-bg: rgba(14, 10, 8, 0.55);
+        --toggle-border: rgba(255, 255, 255, 0.25);
+        --toggle-hover: rgba(255, 255, 255, 0.15);
+        --toggle-text: #FBDBAF;
+        --toggle-glow: 0 0 16px rgba(0, 210, 255, 0.35);
+        --status-green: #10b981;
+        --section-ambient: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(224, 112, 32, 0.14), transparent 70%);
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        transition: background 0.4s ease, color 0.4s ease;
+      }
+
+      h1, h2, h3, h4, .heading-font {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      /* =========================================================
+         1. HERO SECTION (100vh FULL VIEWPORT)
+         ========================================================= */
+      .hero {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: transparent;
+        transition: background 0.4s ease;
+        z-index: 2;
+      }
+
+      /* Continuous floating effect on portrait layers:
+         translateY(-8px) to translateY(0px) over 4s infinite ease-in-out */
+      @keyframes heroPortraitFloat {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Dual-Layer Hero Image Stage: Fixed in background across scroll (full visual background continuity) */
+      .hero-stage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+        --x: -999px;
+        --y: -999px;
+        --spot-r: 0px;
+        will-change: transform, filter;
+        transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+      }
+
+      .hero-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
+        animation: heroPortraitFloat 4s ease-in-out infinite;
+        will-change: transform;
+      }
+
+      /* Top Layer: Default Base Image */
+      .hero-base-img {
+        z-index: 1;
+        opacity: 0.95;
+        transition: opacity 0.5s ease;
+      }
+
+      /* Bottom Hidden Layer: Revealed on cursor hover with soft feathered radial mask */
+      .hero-reveal-img {
+        z-index: 2;
+        -webkit-mask-image: radial-gradient(circle 0px at -999px -999px, black 0%, transparent 100%);
+        mask-image: radial-gradient(circle 0px at -999px -999px, black 0%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        pointer-events: none;
+      }
+
+      /* Hero Stage Fade-In Animation */
+      .hero-image-animate {
+        animation: heroFadeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes heroFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.03);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Hero UI Container: Streamlined uncluttered grid focusing entirely on central portrait */
+      .hero-ui {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        box-sizing: border-box;
+        padding: max(32px, env(safe-area-inset-top)) max(44px, env(safe-area-inset-right)) max(36px, env(safe-area-inset-bottom)) max(44px, env(safe-area-inset-left));
+        display: grid;
+        grid-template-columns: minmax(320px, 520px) 1fr auto;
+        grid-template-rows: auto 1fr;
+        gap: 32px;
+        align-items: start;
+        pointer-events: none;
+      }
+
+      .hero-ui * {
+        pointer-events: auto;
+      }
+
+      /* Top Left Section */
+      .hero-left {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        max-width: 520px;
+      }
+
+      /* Apple iOS Frosted Glass (Glassmorphism) Container */
+      .hero-copy {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 32px 28px;
+        border-radius: 24px;
+        background: rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+        -webkit-backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45),
+                    0 0 30px rgba(6, 182, 212, 0.10),
+                    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+        overflow: hidden;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.3s ease;
+      }
+
+      /* Subtle inner specular gloss highlight across the top squircle curve */
+      .hero-copy::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 45%;
+        border-radius: 24px 24px 100px 100px / 24px 24px 35px 35px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 65%, transparent 100%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .hero-copy > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-copy:hover {
+        border-color: rgba(0, 210, 255, 0.40);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.55),
+                    0 0 40px rgba(0, 210, 255, 0.18),
+                    inset 0 1px 2px 0 rgba(255, 255, 255, 0.35);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        background: rgba(0, 210, 255, 0.15);
+        border: 1px solid rgba(0, 210, 255, 0.45);
+        color: #00e5ff;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+        box-shadow: 0 0 18px rgba(0, 210, 255, 0.25);
+      }
+
+      .badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00e5ff;
+        box-shadow: 0 0 10px #00e5ff, 0 0 16px rgba(0, 229, 255, 0.9);
+        animation: badgeDotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes badgeDotPulse {
+        0%, 100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(0.85);
+        }
+      }
+
+      .hero-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95),
+                     0 0 32px rgba(0, 210, 255, 0.35);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .hero-title span:first-child {
+        color: #FFFFFF;
+      }
+
+      .hero-title span:last-child {
+        color: #00d2ff;
+        text-shadow: 0 0 24px rgba(0, 210, 255, 0.65), 0 0 8px #00d2ff;
+      }
+
+      .hero-desc {
+        font-size: clamp(14px, 1.05vw, 15.5px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.92);
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+        max-width: 460px;
+        font-weight: 400;
+      }
+
+      .hero-actions-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+      }
+
+      /* INQUIRE PROJECT CTA button: Clean Electric Cyan Glow & active micro-interactions */
+      .hero-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 28px;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #00d2ff 0%, #0099cc 50%, #006699 100%);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        color: #06111C;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 0 24px rgba(0, 210, 255, 0.6),
+                    0 8px 24px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    filter 0.25s ease,
+                    background 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-cta-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+
+      .hero-cta-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 0 36px rgba(0, 210, 255, 0.85),
+                    0 12px 28px rgba(0, 0, 0, 0.45),
+                    inset 0 1px 3px rgba(255, 255, 255, 0.8);
+        filter: brightness(1.08);
+      }
+
+      .hero-cta-btn:hover::before {
+        left: 100%;
+      }
+
+      .hero-cta-btn:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5),
+                    0 4px 12px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-cta-btn svg {
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .hero-cta-btn:hover svg {
+        transform: translateX(4px);
+      }
+
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--glass-text-main);
+        cursor: pointer;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.25s ease,
+                    background 0.25s ease,
+                    box-shadow 0.25s ease,
+                    color 0.25s ease;
+      }
+
+      .icon-btn:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent-glow);
+        color: var(--accent-glow);
+        box-shadow: 0 6px 20px rgba(0, 210, 255, 0.35);
+      }
+
+      .icon-btn:active {
+        transform: translateY(1px);
+      }
+
+      /* Top Right Section: Sleek Glassmorphism Header & Availability Pill */
+      .hero-top-right {
+        position: fixed;
+        top: max(22px, env(safe-area-inset-top));
+        right: max(28px, env(safe-area-inset-right));
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+        pointer-events: auto;
+      }
+
+      .portfolio-header-card {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        padding: 10px 22px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.70);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 24px rgba(0, 0, 0, 0.4);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .portfolio-header-card:hover {
+        border-color: rgba(0, 229, 255, 0.45);
+        box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.85), 0 0 28px rgba(0, 229, 255, 0.20);
+      }
+
+      .portfolio-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+      }
+
+      .portfolio-name {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #FFFFFF;
+        letter-spacing: 0.08em;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+      }
+
+      .portfolio-tag {
+        font-size: 11px;
+        font-weight: 600;
+        color: #00E5FF;
+        letter-spacing: 0.1em;
+        text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+      }
+
+      .nav-divider {
+        width: 1px;
+        height: 18px;
+        background: rgba(255, 255, 255, 0.20);
+      }
+
+      .portfolio-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .nav-link {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #F8FAFC;
+        letter-spacing: 0.08em;
+        transition: color 0.2s ease, text-shadow 0.2s ease;
+        cursor: pointer;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+      }
+
+      .nav-link:hover {
+        color: #00E5FF;
+        text-shadow: 0 0 12px rgba(0, 229, 255, 0.9);
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        background: var(--toggle-bg);
+        border: 1px solid var(--toggle-border);
+        color: var(--toggle-text);
+        cursor: pointer;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.04);
+        box-shadow: var(--toggle-glow);
+      }
+
+      .theme-toggle:active {
+        transform: scale(0.96);
+      }
+
+      .toggle-icon-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .theme-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .icon-sun {
+        display: inline-block;
+      }
+
+      .icon-moon {
+        display: none;
+      }
+
+      [data-theme="dark"] .icon-sun,
+      .dark .icon-sun {
+        display: none;
+      }
+
+      [data-theme="dark"] .icon-moon,
+      .dark .icon-moon {
+        display: inline-block;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 7px 18px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.70);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #10b981;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .status-pill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+      }
+
+      .status-pill-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 10px #10b981, 0 0 16px rgba(16, 185, 129, 0.8);
+        animation: statusDotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes statusDotPulse {
+        0%, 100% {
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 0 10px #10b981, 0 0 18px rgba(16, 185, 129, 0.9);
+        }
+        50% {
+          opacity: 0.45;
+          transform: scale(0.85);
+          box-shadow: 0 0 4px #10b981;
+        }
+      }
+
+      /* Center Bottom Scroll Indicator */
+      .hero-center-bottom {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        z-index: 20;
+        pointer-events: auto;
+      }
+
+      /* =========================================================
+         GLASSMORPHIC SCROLL INDICATOR PILL SYSTEM
+         Ultra-sleek rounded capsule (rounded-full px-6 py-2.5)
+         Frosted glass (bg-black/40 backdrop-blur-md border border-white/20 shadow-lg)
+         Typography: Cyan/Silver uppercase tracking (font-mono text-[11px] tracking-widest text-slate-200)
+         Icon: Smooth bounce arrow (animate-bounce / micro pulse)
+         Hover: Glowing Electric Cyan border stroke (hover:border-[#00E5FF]/60 hover:text-[#00E5FF])
+         ========================================================= */
+      .scroll-indicator-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 48px;
+        position: relative;
+        z-index: 15;
+      }
+
+      .scroll-indicator-pill,
+      .scroll-down-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 10px 24px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        color: #E2E8F0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        user-select: none;
+      }
+
+      .scroll-indicator-pill:hover,
+      .scroll-down-btn:hover {
+        border-color: rgba(0, 229, 255, 0.60);
+        color: #00E5FF;
+        box-shadow: 0 0 18px rgba(0, 229, 255, 0.25), 0 12px 30px rgba(0, 0, 0, 0.6);
+        transform: translateY(-2px);
+      }
+
+      .scroll-indicator-pill:active,
+      .scroll-down-btn:active {
+        transform: translateY(1px);
+      }
+
+      .scroll-indicator-pill .pill-arrow,
+      .scroll-down-btn svg {
+        display: inline-flex;
+        color: inherit;
+        animation: pillArrowBounce 2s ease-in-out infinite;
+        transition: transform 0.25s ease, color 0.25s ease;
+      }
+
+      @keyframes pillArrowBounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(4px);
+        }
+      }
+
+      .scroll-indicator-pill:hover .pill-arrow,
+      .scroll-down-btn:hover svg {
+        color: #00E5FF;
+        animation-play-state: paused;
+        transform: translateY(4px);
+      }
+
+      /* =========================================================
+         4. FOOTER & CONTACT SECTION (#contact)
+         Ultra-sleek executive glassmorphic footer
+         ========================================================= */
+      .contact-section {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 90px max(44px, env(safe-area-inset-right)) 80px max(44px, env(safe-area-inset-left));
+        background: rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(14px) saturate(140%);
+        -webkit-backdrop-filter: blur(14px) saturate(140%);
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .contact-container {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 36px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 44px 36px;
+        border-radius: 28px;
+        background: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 1.5px rgba(255, 255, 255, 0.18);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+        color: #FFFFFF;
+        letter-spacing: 0.04em;
+        margin: 0;
+      }
+
+      .contact-desc {
+        font-size: clamp(14px, 1.1vw, 16px);
+        color: #E2E8F0;
+        max-width: 620px;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 8px;
+        width: 100%;
+        max-width: 820px;
+      }
+
+      .contact-whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 26px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.14);
+        border: 1.5px solid #00E5FF;
+        color: #FFFFFF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        box-shadow: 0 0 22px rgba(0, 229, 255, 0.28);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .contact-whatsapp-btn:hover {
+        background: #00E5FF;
+        color: #000000;
+        box-shadow: 0 0 32px rgba(0, 229, 255, 0.65);
+        transform: translateY(-2px);
+      }
+
+      .contact-whatsapp-btn svg {
+        transition: transform 0.25s ease;
+      }
+
+      .contact-whatsapp-btn:hover svg {
+        transform: scale(1.08);
+      }
+
+      .contact-email-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 26px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #F1F5F9;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .contact-email-btn:hover {
+        border-color: rgba(0, 229, 255, 0.60);
+        color: #00E5FF;
+        background: rgba(0, 229, 255, 0.08);
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.22);
+        transform: translateY(-2px);
+      }
+
+      .contact-copy-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 22px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #CBD5E1;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+
+      .contact-copy-btn:hover {
+        border-color: rgba(0, 229, 255, 0.50);
+        color: #00E5FF;
+        background: rgba(255, 255, 255, 0.10);
+        transform: translateY(-2px);
+      }
+
+      .contact-copy-btn.is-copied {
+        background: rgba(52, 211, 153, 0.18);
+        border-color: #34D399;
+        color: #34D399;
+        box-shadow: 0 0 20px rgba(52, 211, 153, 0.35);
+      }
+
+      .contact-details-strip {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 14px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12px;
+        color: #94A3B8;
+        width: 100%;
+        max-width: 760px;
+      }
+
+      .contact-details-strip .strip-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .contact-details-strip .strip-item svg {
+        color: #00E5FF;
+      }
+
+      .footer-meta-row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 11.5px;
+        color: #94A3B8;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      .back-to-top-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #E2E8F0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+
+      .back-to-top-btn:hover {
+        border-color: #00E5FF;
+        color: #00E5FF;
+        background: rgba(0, 229, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Word Pull Up text styling for Hero Headline */
+      .pull-line {
+        display: block;
+      }
+
+      .pull-word {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(4px);
+        will-change: transform, opacity, filter;
+        animation: wordPullUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes wordPullUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      /* Toast Notification */
+      .toast {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        padding: 12px 20px;
+        border-radius: 9999px;
+        background: var(--glass-card-bg);
+        border: 1px solid var(--accent-glow);
+        color: var(--glass-text-main);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 16px rgba(0, 210, 255, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        z-index: 2000;
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Accessibility & Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          transition-delay: 0s !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* =========================================================
+         2. SECTION 2: ABOUT & SKILLS
+         Seamless ultra-translucent frosted glass backdrop with subtle blur
+         ========================================================= */
+      .about-section {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        box-sizing: border-box;
+        padding: 120px max(44px, env(safe-area-inset-right)) 120px max(44px, env(safe-area-inset-left));
+        background: rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .about-container {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header */
+      .about-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .about-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid #00E5FF;
+        color: #00E5FF;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        box-shadow: 0 0 16px rgba(0, 229, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+
+      .about-eyebrow {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        color: #E2E8F0;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+
+      .about-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(2rem, 3.8vw, 3.2rem);
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+        margin: 0;
+      }
+
+      .about-subtitle {
+        font-size: clamp(14.5px, 1.1vw, 16px);
+        line-height: 1.65;
+        color: #E2E8F0;
+        max-width: 660px;
+        margin: 0;
+      }
+
+      /* 2-Column Desktop Split Layout: Bio Text on Left, Profile Card on Right */
+      .about-split-layout {
+        display: grid;
+        grid-template-columns: 1fr minmax(320px, 420px);
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      /* Right Side: Portrait Card in a styled glassmorphic frame */
+      .portrait-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .portrait-glass-frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 460px;
+        max-height: 600px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(0, 229, 255, 0.20);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55),
+                    0 0 24px rgba(0, 229, 255, 0.08),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.15);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.35s ease,
+                    box-shadow 0.35s ease;
+      }
+
+      .portrait-glass-frame:hover {
+        border-color: rgba(0, 229, 255, 0.50);
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65),
+                    0 0 36px rgba(0, 229, 255, 0.25),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.30);
+      }
+
+      .portrait-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 18%;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .portrait-glass-frame:hover .portrait-photo {
+        transform: scale(1.025);
+      }
+
+      /* Dark gradient vignette masks for seamless contrast and dark theme blending */
+      .portrait-vignette {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(to top, #090a0f 0%, rgba(9, 10, 15, 0.25) 30%, transparent 60%, #090a0f 100%),
+                    linear-gradient(to right, #090a0f 0%, transparent 40%),
+                    linear-gradient(to left, #090a0f 0%, transparent 40%);
+        z-index: 1;
+      }
+
+      .portrait-inner-sheen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 35%;
+        border-radius: 24px 24px 80px 80px / 24px 24px 30px 30px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.01) 60%, transparent 100%);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .portrait-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 16px;
+        border-radius: 9999px;
+        background: rgba(15, 23, 42, 0.70);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #E2E8F0;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Right Side: Content Column */
+      .about-content-col {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        justify-content: space-between;
+      }
+
+      /* Executive Glass Card (Translucent bg-black/30 with backdrop-blur-xl) */
+      .executive-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 24px;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.20),
+                    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.3s ease;
+      }
+
+      .executive-card:hover {
+        border-color: rgba(0, 229, 255, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28),
+                    0 0 20px rgba(0, 229, 255, 0.08),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.25);
+      }
+
+      .executive-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-inner-sheen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 35%;
+        border-radius: 18px 18px 100px 100px / 18px 18px 30px 30px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.01) 60%, transparent 100%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .content-eyebrow {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: #00E5FF;
+        text-transform: uppercase;
+      }
+
+      .executive-card-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.02rem, 1.2vw, 1.18rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        margin: 0;
+      }
+
+      .badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00E5FF;
+        box-shadow: 0 0 8px #00E5FF;
+        display: inline-block;
+      }
+
+      /* Single Merged Elegant Bio Text Block (High Contrast silver/white) */
+      .bio-lead {
+        font-size: clamp(13.2px, 0.96vw, 14.2px);
+        line-height: 1.62;
+        color: #E2E8F0;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        margin: 0;
+      }
+
+      .bio-lead strong {
+        color: #FFFFFF;
+        font-weight: 600;
+      }
+
+      /* 4 Pillars Skills (2x2 Compact Grid) */
+      .skills-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .skills-meta-pill {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: #E2E8F0;
+        padding: 2.5px 9px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .skills-pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 18px;
+        margin-top: 2px;
+      }
+
+      .skill-pillar-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      }
+
+      .skill-pillar-item:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(0, 229, 255, 0.35);
+      }
+
+      .pillar-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .pillar-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .pillar-title {
+        color: #FFFFFF;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.25;
+      }
+
+      .pillar-desc {
+        color: #E2E8F0;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+      }
+
+      .pillar-percent {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: #00E5FF;
+        letter-spacing: 0.05em;
+        text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+        flex-shrink: 0;
+        padding-top: 1px;
+      }
+
+      /* Ultra-thin glossy progress bar line (h-[2px] with Electric Cyan #00E5FF glow fill) */
+      .skill-progress-track {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .skill-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #00B4D8 0%, #00E5FF 100%);
+        border-radius: 9999px;
+        box-shadow: 0 0 6px rgba(0, 229, 255, 0.70), 0 0 2px rgba(0, 229, 255, 0.90);
+        transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+        will-change: width;
+      }
+
+      .scroll-reveal.is-revealed .skill-progress-fill {
+        width: var(--percent);
+      }
+
+      .skill-pillar-item:hover .skill-progress-fill {
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.90), 0 0 4px #00E5FF;
+      }
+
+      /* Key Metrics Footer (Sleek Compact Horizontal Row with Translucent Glass) */
+      .metrics-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1.25fr;
+        align-items: center;
+        gap: 16px;
+        background: rgba(15, 23, 42, 0.25);
+        backdrop-filter: blur(16px) saturate(150%);
+        -webkit-backdrop-filter: blur(16px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 14px 22px;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.20),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+      }
+
+      .metrics-row:hover {
+        border-color: rgba(0, 229, 255, 0.35);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28),
+                    0 0 20px rgba(0, 229, 255, 0.08);
+      }
+
+      .metrics-row > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .metric-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .metric-value {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+        font-weight: 700;
+        color: #00E5FF;
+        letter-spacing: 0.02em;
+        text-shadow: 0 0 14px rgba(0, 229, 255, 0.40);
+        line-height: 1.1;
+      }
+
+      .metric-label {
+        font-size: 11px;
+        line-height: 1.4;
+        color: #E2E8F0;
+        font-weight: 500;
+        letter-spacing: 0.015em;
+      }
+
+      .metric-divider {
+        width: 1px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* Scroll Reveal Animations (High-end Continuous Bidirectional Entry/Exit) */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        will-change: transform, opacity;
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .scroll-reveal-down {
+        opacity: 0;
+        transform: translateY(-24px) scale(0.98);
+        will-change: transform, opacity;
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .scroll-reveal-left {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.98);
+        will-change: transform, opacity;
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .scroll-reveal-right {
+        opacity: 0;
+        transform: translateX(30px) scale(0.98);
+        will-change: transform, opacity;
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .scroll-reveal.is-revealed,
+      .scroll-reveal-down.is-revealed,
+      .scroll-reveal-left.is-revealed,
+      .scroll-reveal-right.is-revealed {
+        opacity: 1 !important;
+        transform: translate(0, 0) scale(1) !important;
+      }
+
+      /* =========================================================
+         3. SECTION 3: "OUR WORK" (SELECTED WORKS VIDEO SHOWCASE)
+         Seamless ultra-translucent frosted glass backdrop with full background continuity
+         ========================================================= */
+      .works-section {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 100px max(44px, env(safe-area-inset-right)) 130px max(44px, env(safe-area-inset-left));
+        background: rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .works-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .works-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .works-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid #00E5FF;
+        color: #00E5FF;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        box-shadow: 0 0 16px rgba(0, 229, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+
+      .works-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+        margin: 0;
+      }
+
+      .works-subtitle {
+        font-size: clamp(14px, 1.05vw, 15.5px);
+        line-height: 1.6;
+        color: #E2E8F0;
+        max-width: 680px;
+        margin: 0;
+      }
+
+      /* 2-Column Video Portfolio Grid */
+      .works-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        width: 100%;
+      }
+
+      .work-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 24px;
+        background: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.35s ease,
+                    box-shadow 0.35s ease;
+      }
+
+      .work-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 229, 255, 0.45);
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75),
+                    0 0 30px rgba(0, 229, 255, 0.14),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.30);
+      }
+
+      .work-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Video Thumbnail Wrapper */
+      .work-video-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9.5;
+        overflow: hidden;
+        background: #050A12;
+      }
+
+      .work-video-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .work-card:hover .work-video-preview {
+        transform: scale(1.035);
+      }
+
+      .video-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 15, 24, 0.05) 0%, rgba(10, 15, 24, 0.70) 100%);
+        pointer-events: none;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .work-card:hover .video-overlay-gradient {
+        opacity: 0.85;
+      }
+
+      /* Custom Glass Play Button */
+      .video-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+        color: #00E5FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 229, 255, 0.25);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 3;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .play-btn-glow {
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .work-card:hover .play-btn-glow {
+        opacity: 1;
+      }
+
+      .work-card:hover .video-play-btn {
+        transform: translate(-50%, -50%) scale(1.12);
+        background: rgba(0, 229, 255, 0.22);
+        border-color: #00E5FF;
+        color: #FFFFFF;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 32px rgba(0, 229, 255, 0.55);
+      }
+
+      .video-duration-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 9.5px;
+        font-weight: 600;
+        color: #E2E8F0;
+        letter-spacing: 0.1em;
+      }
+
+      .video-live-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00E5FF;
+        box-shadow: 0 0 8px #00E5FF;
+      }
+
+      /* Card Content */
+      .work-card-content {
+        padding: 22px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+        justify-content: space-between;
+      }
+
+      .work-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .work-tag {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 11px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #E2E8F0;
+        letter-spacing: 0.01em;
+        transition: all 0.2s ease;
+      }
+
+      .work-tag.active {
+        background: rgba(0, 229, 255, 0.10);
+        border-color: rgba(0, 229, 255, 0.45);
+        color: #00E5FF;
+      }
+
+      .work-card-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+        color: #FFFFFF;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        margin: 0;
+        transition: color 0.25s ease;
+      }
+
+      .work-card:hover .work-card-title {
+        color: #00E5FF;
+      }
+
+      .work-card-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #E2E8F0;
+        margin: 0;
+      }
+
+      .work-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+      }
+
+      .watch-action-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        color: #00E5FF;
+        letter-spacing: 0.08em;
+        transition: gap 0.25s ease;
+      }
+
+      .work-card:hover .watch-action-text {
+        gap: 10px;
+      }
+
+      .work-meta-year {
+        font-size: 10.5px;
+        color: #CBD5E1;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        letter-spacing: 0.08em;
+      }
+
+      /* Fullscreen / Lightbox Video Modal */
+      .video-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 5000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+      }
+
+      .video-modal.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .video-modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(4, 8, 16, 0.88);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      .video-modal-container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 980px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.70), 0 0 50px rgba(0, 229, 255, 0.20);
+        transform: scale(0.95) translateY(12px);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .video-modal.is-open .video-modal-container {
+        transform: scale(1) translateY(0);
+      }
+
+      .video-modal-header {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(10, 15, 24, 0.85);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      }
+
+      .video-modal-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .video-modal-badge {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: #00E5FF;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.12);
+        border: 1px solid rgba(0, 229, 255, 0.35);
+      }
+
+      .video-modal-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #FFFFFF;
+        letter-spacing: 0.04em;
+        margin: 0;
+      }
+
+      .video-modal-close-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #E2E8F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .video-modal-close-btn:hover {
+        background: rgba(0, 229, 255, 0.20);
+        border-color: #00E5FF;
+        color: #FFFFFF;
+        transform: scale(1.08);
+      }
+
+      .video-modal-player-wrap {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #000000;
+      }
+
+      .modal-video-player {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+      }
+
+      /* Vertical 9:16 Video Modal Adaptation */
+      .video-modal-container.is-vertical {
+        max-width: 420px;
+      }
+
+      .video-modal-container.is-vertical .video-modal-player-wrap {
+        aspect-ratio: 9 / 16;
+        max-height: 80vh;
+      }
+
+      /* =========================================================
+         03B // SHORT-FORM REELS & VIRAL CONTENT
+         Responsive 9:16 Vertical Video Grid (4 Reels Showcase)
+         grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto
+         ========================================================= */
+      .reels-subsection {
+        width: 100%;
+        max-width: 1280px;
+        margin: 36px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        padding-top: 54px;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+      }
+
+      .reels-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .reels-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 15px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid #00E5FF;
+        color: #00E5FF;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        box-shadow: 0 0 14px rgba(0, 229, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      }
+
+      .reels-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+        margin: 0;
+      }
+
+      .reels-subtitle {
+        font-size: clamp(13.5px, 1vw, 15px);
+        line-height: 1.55;
+        color: #E2E8F0;
+        max-width: 620px;
+        margin: 0;
+      }
+
+      /* Responsive 9:16 Vertical Video Grid: grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto */
+      .reels-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 640px) {
+        .reels-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .reels-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+      }
+
+      /* =========================================================
+         REEL CARDS: SCROLL-TRIGGERED ENTRANCE & HIGH-END MICRO-EFFECTS
+         Initial State (Hidden): opacity: 0, translate-y: 50px, scale: 0.94
+         Target State (Revealed): opacity: 1, translate-y: 0px, scale: 1
+         Easing: cubic-bezier(0.16, 1, 0.3, 1) duration: 0.8s
+         ========================================================= */
+      .reel-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                    border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    backdrop-filter 0.4s ease,
+                    -webkit-backdrop-filter 0.4s ease;
+        will-change: transform, opacity;
+      }
+
+      /* Target State (Revealed into viewport) */
+      .reel-card.is-revealed {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+      }
+
+      /* Ambient Neon Pulse on Lock-In:
+         As each card finishes sliding up into place, trigger a brief 0.5s border ambient glow
+         (shadow-[0_0_25px_rgba(0,229,255,0.35)] border #00E5FF/50) that softly fades out into the idle glass state */
+      @keyframes reelNeonLockIn {
+        0% {
+          border-color: rgba(0, 229, 255, 0.50);
+          box-shadow: 0 0 25px rgba(0, 229, 255, 0.35),
+                      0 20px 48px rgba(0, 0, 0, 0.35),
+                      inset 0 1px 1.5px rgba(255, 255, 255, 0.25);
+        }
+        100% {
+          border-color: rgba(255, 255, 255, 0.10);
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35),
+                      inset 0 1px 1.5px rgba(255, 255, 255, 0.18);
+        }
+      }
+
+      .reel-card.lock-in-pulse {
+        animation: reelNeonLockIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @media (max-width: 639px) {
+        .reel-card {
+          max-width: 360px;
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+
+      /* High-End Hover Micro-Interactions:
+         Hover Lift: Smoothly scale active card to scale-[1.03] with -translate-y-2 elevation and backdrop-blur-2xl */
+      .reel-card.is-revealed:hover {
+        transform: translateY(-8px) scale(1.03);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
+        border-color: rgba(0, 229, 255, 0.60);
+        box-shadow: 0 28px 65px rgba(0, 0, 0, 0.8),
+                    0 0 32px rgba(0, 229, 255, 0.25),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.30);
+      }
+
+      .reel-video-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        background: #040810;
+        border-radius: 19px;
+      }
+
+      .reel-video-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+      }
+
+      /* Slightly brighten the video thumbnail background on card hover */
+      .reel-card:hover .reel-video-preview {
+        transform: scale(1.045);
+        filter: brightness(1.10) contrast(1.02);
+      }
+
+      .reel-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 15, 24, 0.22) 0%, rgba(10, 15, 24, 0.05) 35%, rgba(10, 15, 24, 0.88) 100%);
+        pointer-events: none;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .reel-card:hover .reel-overlay-gradient {
+        background: linear-gradient(180deg, rgba(10, 15, 24, 0.10) 0%, rgba(10, 15, 24, 0.02) 35%, rgba(10, 15, 24, 0.90) 100%);
+      }
+
+      .reel-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 8.5px;
+        font-weight: 600;
+        color: #E2E8F0;
+        letter-spacing: 0.1em;
+      }
+
+      .reel-play-btn {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+        color: #00E5FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 229, 255, 0.22);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    background 0.3s ease,
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+        z-index: 3;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .reel-play-glow {
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.5) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .reel-card:hover .reel-play-glow {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+
+      /* Play Button Activation:
+         On hover, pulse the central play button icon with an intense Electric Cyan outer ring
+         (shadow-[0_0_20px_#00E5FF] scale-110) */
+      @keyframes playPulseRing {
+        0%, 100% {
+          box-shadow: 0 0 20px #00E5FF, 0 0 35px rgba(0, 229, 255, 0.55), inset 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 26px #00E5FF, 0 0 45px rgba(0, 229, 255, 0.75), inset 0 0 14px rgba(0, 229, 255, 0.6);
+        }
+      }
+
+      .reel-card:hover .reel-play-btn {
+        transform: translate(-50%, -50%) scale(1.10);
+        background: rgba(0, 229, 255, 0.25);
+        border-color: #00E5FF;
+        color: #FFFFFF;
+        box-shadow: 0 0 20px #00E5FF, 0 0 35px rgba(0, 229, 255, 0.55);
+        animation: playPulseRing 1.6s ease-in-out infinite;
+      }
+
+      .reel-info-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px 14px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .reel-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .reel-tag {
+        font-size: 9.5px;
+        font-weight: 500;
+        padding: 2.5px 7.5px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #E2E8F0;
+        letter-spacing: 0.01em;
+        backdrop-filter: blur(8px);
+      }
+
+      .reel-tag.active {
+        background: rgba(0, 229, 255, 0.12);
+        border-color: rgba(0, 229, 255, 0.5);
+        color: #00E5FF;
+      }
+
+      .reel-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        transition: color 0.25s ease;
+      }
+
+      .reel-card:hover .reel-title {
+        color: #00E5FF;
+      }
+
+      /* =========================================================
+         03C // VFX & PROCEDURAL COMPOSITING (#vfx)
+         Dedicated VFX Breakdown, 3D Tracking, & Procedural Pipeline
+         ========================================================= */
+      .vfx-subsection {
+        width: 100%;
+        max-width: 1280px;
+        margin: 54px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        padding-top: 54px;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+      }
+
+      .vfx-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .vfx-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 15px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid #00E5FF;
+        color: #00E5FF;
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        box-shadow: 0 0 14px rgba(0, 229, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      }
+
+      .vfx-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+        margin: 0;
+      }
+
+      .vfx-subtitle {
+        font-size: clamp(13.5px, 1vw, 15px);
+        line-height: 1.55;
+        color: #E2E8F0;
+        max-width: 640px;
+        margin: 0;
+      }
+
+      /* Translucent dark glass container (bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 overflow-hidden) */
+      .vfx-showcase-container {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .vfx-glass-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 24px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(24px) saturate(150%);
+        -webkit-backdrop-filter: blur(24px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.50),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      @media (min-width: 900px) {
+        .vfx-glass-card {
+          grid-template-columns: 380px 1fr;
+          gap: 36px;
+          padding: 32px;
+        }
+      }
+
+      .vfx-glass-card:hover {
+        border-color: rgba(0, 229, 255, 0.35);
+        box-shadow: 0 0 35px rgba(0, 229, 255, 0.12),
+                    0 28px 70px rgba(0, 0, 0, 0.60);
+      }
+
+      /* Video Column & Responsive Viewport (hover:border-[#00E5FF]/50 hover:shadow-[0_0_30px_rgba(0,229,255,0.2)]) */
+      .vfx-video-col {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .vfx-video-viewport {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        aspect-ratio: 9 / 16;
+        border-radius: 16px;
+        background: #000000;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .vfx-video-viewport:hover {
+        transform: scale(1.02);
+        border-color: rgba(0, 229, 255, 0.50);
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.20),
+                    0 20px 50px rgba(0, 0, 0, 0.6);
+      }
+
+      .vfx-video-preview {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .vfx-video-overlay-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, transparent 25%, transparent 70%, rgba(0, 0, 0, 0.65) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .vfx-status-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 229, 255, 0.35);
+        color: #00E5FF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .vfx-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+        color: #00E5FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.25);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    background 0.3s ease,
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+        z-index: 3;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .vfx-play-glow {
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.5) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .vfx-video-viewport:hover .vfx-play-glow {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+
+      .vfx-video-viewport:hover .vfx-play-btn {
+        transform: translate(-50%, -50%) scale(1.10);
+        background: rgba(0, 229, 255, 0.25);
+        border-color: #00E5FF;
+        color: #FFFFFF;
+        box-shadow: 0 0 25px #00E5FF, 0 0 40px rgba(0, 229, 255, 0.6);
+      }
+
+      .vfx-click-hint {
+        position: absolute;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.70);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #E2E8F0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 9.5px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+        pointer-events: none;
+        transition: border-color 0.3s ease, color 0.3s ease;
+      }
+
+      .vfx-video-viewport:hover .vfx-click-hint {
+        border-color: rgba(0, 229, 255, 0.5);
+        color: #00E5FF;
+      }
+
+      /* Details Column */
+      .vfx-details-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .vfx-details-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .vfx-spec-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.10);
+        border: 1px solid rgba(0, 229, 255, 0.35);
+        color: #00E5FF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+
+      .vfx-card-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        line-height: 1.35;
+        margin: 0;
+      }
+
+      .vfx-card-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #CBD5E1;
+        margin: 0;
+      }
+
+      /* Technical Spec Badges List */
+      .vfx-specs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .vfx-spec-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: border-color 0.3s ease, background 0.3s ease;
+      }
+
+      .vfx-spec-item:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(0, 229, 255, 0.30);
+      }
+
+      .vfx-spec-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .vfx-spec-badge {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 2.5px 8px;
+        border-radius: 6px;
+      }
+
+      .badge-final {
+        color: #00E5FF;
+        background: rgba(0, 229, 255, 0.12);
+        border: 1px solid rgba(0, 229, 255, 0.40);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+      }
+
+      .badge-nodal {
+        color: #FBBF24;
+        background: rgba(251, 191, 36, 0.12);
+        border: 1px solid rgba(251, 191, 36, 0.40);
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+      }
+
+      .badge-raw {
+        color: #A78BFA;
+        background: rgba(167, 139, 250, 0.12);
+        border: 1px solid rgba(167, 139, 250, 0.40);
+        box-shadow: 0 0 10px rgba(167, 139, 250, 0.15);
+      }
+
+      .vfx-spec-tag {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 10px;
+        color: #94A3B8;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .vfx-spec-text {
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: #E2E8F0;
+        margin: 0;
+      }
+
+      /* Launch Button Row */
+      .vfx-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        padding-top: 4px;
+      }
+
+      .vfx-launch-modal-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 22px;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, rgba(0, 229, 255, 0.22) 0%, rgba(0, 229, 255, 0.06) 100%);
+        border: 1px solid #00E5FF;
+        color: #FFFFFF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      }
+
+      .vfx-launch-modal-btn:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, rgba(0, 229, 255, 0.38) 0%, rgba(0, 229, 255, 0.12) 100%);
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.40), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      }
+
+      .vfx-meta-runtime {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 10.5px;
+        color: #94A3B8;
+        letter-spacing: 0.06em;
+      }
+
+      /* =========================================================
+         04 // WEB DEVELOPMENT & DIGITAL PLATFORMS (#web)
+         Seamless dark glassmorphic canvas with browser viewports
+         ========================================================= */
+      .web-section {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 100px max(44px, env(safe-area-inset-right)) 130px max(44px, env(safe-area-inset-left));
+        background: rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .web-container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .web-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .web-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+        margin: 0;
+      }
+
+      .web-subtitle {
+        font-size: clamp(14px, 1.05vw, 15.5px);
+        line-height: 1.6;
+        color: #E2E8F0;
+        max-width: 680px;
+        margin: 0;
+      }
+
+      /* 2-Column Web Projects Desktop Grid */
+      .web-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .web-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+
+      /* Dark Browser Viewport Glass Card */
+      .web-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 22px;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(24px) saturate(150%);
+        -webkit-backdrop-filter: blur(24px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 1.5px rgba(255, 255, 255, 0.16);
+        overflow: hidden;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.35s ease,
+                    box-shadow 0.35s ease;
+      }
+
+      .web-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: rgba(0, 229, 255, 0.50);
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.15),
+                    0 28px 60px rgba(0, 0, 0, 0.70),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.28);
+      }
+
+      /* Browser Mockup Top Bar (bg-[#0B0F19]/90 backdrop-blur-md px-4 py-2 border-b border-white/10) */
+      .browser-bar {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 16px;
+        background: rgba(11, 15, 25, 0.90);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      }
+
+      .browser-dots {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .browser-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot-red { background: #FF5F56; box-shadow: 0 0 6px rgba(255, 95, 86, 0.5); }
+      .dot-yellow { background: #FFBD2E; box-shadow: 0 0 6px rgba(255, 189, 46, 0.5); }
+      .dot-green { background: #27C93F; box-shadow: 0 0 6px rgba(39, 201, 63, 0.5); }
+
+      .browser-url-pill {
+        flex: 1;
+        max-width: 340px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 14px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.50);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #F8FAFC;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .ssl-lock-icon {
+        flex-shrink: 0;
+        color: #10B981; /* Green SSL security lock icon */
+        filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.5));
+      }
+
+      .browser-url-text {
+        color: #F8FAFC;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .browser-ext-badge {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.55);
+        transition: color 0.25s ease, transform 0.25s ease;
+      }
+
+      .web-card:hover .browser-ext-badge {
+        color: #00E5FF;
+        transform: translate(2px, -2px);
+      }
+
+      /* Visual Browser Viewport Frame (h-[260px] md:h-[300px] w-full overflow-hidden relative group/screen bg-slate-900) */
+      .browser-viewport-frame {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+        background: #090D16;
+        cursor: pointer;
+      }
+
+      @media (min-width: 768px) {
+        .browser-viewport-frame {
+          height: 300px;
+        }
+      }
+
+      .web-screenshot-scroll-wrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .web-screenshot-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        object-position: top center;
+        transform: translateY(0%);
+        transition: transform 4000ms ease-in-out;
+        will-change: transform;
+      }
+
+      /* Hover-triggered smooth vertical scroll showing the whole webpage */
+      .web-card:hover .web-screenshot-img,
+      .browser-viewport-frame:hover .web-screenshot-img {
+        transform: translateY(calc(-100% + 260px));
+      }
+
+      @media (min-width: 768px) {
+        .web-card:hover .web-screenshot-img,
+        .browser-viewport-frame:hover .web-screenshot-img {
+          transform: translateY(calc(-100% + 300px));
+        }
+      }
+
+      /* Subtle Dark Vignette Overlay Gradient (bg-gradient-to-t from-[#05070B] via-transparent to-black/40) */
+      .browser-vignette-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, transparent 22%, transparent 72%, #05070B 100%);
+        z-index: 2;
+      }
+
+      /* Live Visual Preview Floating Pill: [ 👁️ HOVER TO SCROLL HOMEPAGE ] */
+      .preview-hover-hint-pill {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        z-index: 5;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.70);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(0, 229, 255, 0.30);
+        color: #00E5FF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        transition: opacity 300ms ease, transform 300ms ease;
+        pointer-events: none;
+      }
+
+      .web-card:hover .preview-hover-hint-pill,
+      .browser-viewport-frame:hover .preview-hover-hint-pill {
+        opacity: 0;
+        transform: translateY(3px);
+      }
+
+      .browser-status-chip {
+        position: absolute;
+        bottom: 12px;
+        left: 16px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 9px;
+        font-weight: 600;
+        color: #E2E8F0;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      /* Card Content Body */
+      .web-card-body {
+        padding: 24px 26px 26px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1;
+      }
+
+      .web-category-tag {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: #00E5FF;
+        text-transform: uppercase;
+      }
+
+      .web-card-title {
+        font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+        font-size: clamp(1.35rem, 1.8vw, 1.55rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        margin: 0;
+      }
+
+      .web-url-preview-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11.5px;
+        color: #94A3B8;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .web-url-preview-link:hover {
+        color: #00E5FF;
+        text-decoration: underline;
+      }
+
+      .web-card-desc {
+        font-size: 14px;
+        line-height: 1.62;
+        color: #E2E8F0;
+        margin: 0;
+      }
+
+      .web-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .web-tag-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: #CBD5E1;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        transition: all 0.25s ease;
+      }
+
+      .web-card:hover .web-tag-pill {
+        border-color: rgba(0, 229, 255, 0.35);
+        color: #F8FAFC;
+        background: rgba(0, 229, 255, 0.08);
+      }
+
+      .web-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: auto;
+      }
+
+      .web-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 22px;
+        border-radius: 9999px;
+        background: rgba(0, 229, 255, 0.12);
+        border: 1.5px solid #00E5FF;
+        color: #FFFFFF;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 0 16px rgba(0, 229, 255, 0.22);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+      }
+
+      .web-cta-btn:hover {
+        background: #00E5FF;
+        color: #000000;
+        box-shadow: 0 0 26px rgba(0, 229, 255, 0.55);
+        transform: translateY(-2px);
+      }
+
+      .web-meta-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        color: #94A3B8;
+        letter-spacing: 0.04em;
+      }
+
+      /* Hero & Section 2 Responsive Breakpoints */
+      @media (max-width: 1024px) {
+        .about-section {
+          padding: 100px max(24px, env(safe-area-inset-right)) 90px max(24px, env(safe-area-inset-left));
+        }
+        .about-split-layout {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .portrait-card {
+          position: static;
+          max-width: 440px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .portrait-glass-frame {
+          aspect-ratio: 3 / 4;
+          width: 100%;
+          min-height: auto;
+          max-height: 540px;
+        }
+        .metrics-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .metric-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .works-section {
+          padding: 80px max(20px, env(safe-area-inset-right)) 100px max(20px, env(safe-area-inset-left));
+        }
+        .works-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .work-card-content {
+          padding: 18px 20px;
+        }
+        .video-modal {
+          padding: 14px;
+        }
+        .video-modal-header {
+          padding: 12px 18px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .skills-pillars-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .executive-card {
+          padding: 16px 18px;
+        }
+      }
+      @media (max-width: 1180px) {
+        .hero-ui {
+          grid-template-columns: minmax(300px, 460px) 1fr auto;
+          padding: max(24px, env(safe-area-inset-top)) max(28px, env(safe-area-inset-right)) 80px max(28px, env(safe-area-inset-left));
+          gap: 20px;
+        }
+        .hero-left {
+          grid-column: 1;
+          grid-row: 1;
+          max-width: 460px;
+        }
+        .hero-top-right {
+          grid-column: 3;
+          grid-row: 1;
+        }
+        .hero-center-bottom {
+          display: flex !important;
+          bottom: 24px;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero-top-right {
+          position: fixed;
+          top: max(12px, env(safe-area-inset-top));
+          left: 12px;
+          right: 12px;
+          width: auto;
+          align-items: center;
+          z-index: 1000;
+        }
+        .status-pill {
+          display: none;
+        }
+        .hero-ui {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-start;
+          padding: max(74px, env(safe-area-inset-top)) 20px 84px;
+          gap: 20px;
+        }
+        .hero-left {
+          width: 100%;
+          max-width: 100%;
+          margin-top: 10px;
+        }
+        .hero-copy {
+          padding: 24px 20px;
+          border-radius: 24px;
+          max-width: 100%;
+        }
+        .hero-center-bottom {
+          display: flex !important;
+          bottom: 20px;
+        }
+      }
+
+      @media (max-width: 580px) {
+        .hero-ui {
+          padding: max(70px, env(safe-area-inset-top)) 16px 76px;
+          gap: 14px;
+        }
+        .hero-top-right {
+          align-items: stretch;
+          gap: 8px;
+        }
+        .portfolio-header-card {
+          width: 100%;
+          justify-content: space-between;
+          padding: 8px 14px;
+          gap: 8px;
+        }
+        .portfolio-name {
+          font-size: 13px;
+        }
+        .portfolio-nav {
+          gap: 8px;
+        }
+        .nav-link {
+          font-size: 10px;
+        }
+        .nav-divider {
+          display: none;
+        }
+        .hero-copy {
+          padding: 18px 16px;
+          gap: 12px;
+          border-radius: 20px;
+        }
+        .hero-title {
+          font-size: 1.35rem;
+        }
+        .hero-desc {
+          font-size: 13px;
+          line-height: 1.5;
+        }
+        .hero-actions-row {
+          gap: 10px;
+        }
+        .hero-cta-btn {
+          flex: 1 1 auto;
+          padding: 12px 18px;
+          font-size: 11px;
+          justify-content: center;
+        }
+        .hero-center-bottom {
+          display: flex !important;
+          bottom: 16px;
+        }
+        .scroll-down-btn,
+        .scroll-indicator-pill {
+          padding: 8px 18px;
+          font-size: 10px;
+          letter-spacing: 0.1em;
+        }
+        .reel-card {
+          border-radius: 16px;
+        }
+        .reel-video-wrapper {
+          border-radius: 15px;
+        }
+        .reel-play-btn {
+          width: 42px;
+          height: 42px;
+        }
+        .reel-title {
+          font-size: 10.5px;
+        }
+        .reel-tag {
+          font-size: 8.5px;
+          padding: 2px 6px;
+        }
+        .reel-badge {
+          font-size: 7.5px;
+          padding: 3px 7px;
+          top: 10px;
+          left: 10px;
+        }
+        .reel-info-overlay {
+          padding: 12px 10px;
+        }
+        .vfx-glass-card {
+          padding: 18px 16px;
+          gap: 20px;
+        }
+        .vfx-video-viewport {
+          max-width: 290px;
+        }
+        .vfx-spec-item {
+          padding: 10px 12px;
+        }
+      }
+
+      /* Compact mobile landscape / low height fallback */
+      @media (max-height: 640px) and (max-width: 860px) {
+        html, body {
+          overflow-y: auto;
+        }
+        .hero {
+          height: auto;
+          min-height: 100vh;
+          min-height: 100dvh;
+          max-height: none;
+        }
+        .hero-ui {
+          height: auto;
+          min-height: 100vh;
+          min-height: 100dvh;
+          max-height: none;
+        }
+      }
+
+      /* Section 1 Permanent Visibility */
+      #hero,
+      #hero .hero-ui,
+      #hero .hero-left,
+      #hero .hero-copy,
+      #hero .hero-badge,
+      #hero .hero-copy h1,
+      #hero .hero-title,
+      #hero .hero-copy p,
+      #hero .hero-desc,
+      #hero .hero-actions-row,
+      #hero .hero-cta-btn,
+      #hero .icon-btn,
+      #hero .hero-top-right,
+      #hero .portfolio-header-card,
+      #hero .status-pill,
+      #hero .hero-center-bottom {
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =========================================================
+         1. HERO SECTION (100vh) WITH DUAL-LAYER SPOTLIGHT REVEAL
+         ========================================================= -->
+    <main class="hero" id="hero">
+      <!-- DUAL-LAYER HERO STAGE: Strict uploaded images -->
+      <div class="hero-stage hero-image-animate" id="hero-stage">
+        <!-- Top Layer: 32e6dd5e-174a-4fe9-9f32-caa81f4ff093 (2).png -->
+        <img
+          class="hero-layer hero-base-img"
+          id="hero-base-img"
+          src="/32e6dd5e-174a-4fe9-9f32-caa81f4ff093%20(2).png"
+          alt="Adam Biyadi Portfolio Visual Base"
+          draggable="false"
+        />
+
+        <!-- Hidden Cyber Reveal Layer: b40de72e-56e0-49cb-90f1-52bebbb72c99.png -->
+        <img
+          class="hero-layer hero-reveal-img"
+          id="hero-reveal-img"
+          src="/b40de72e-56e0-49cb-90f1-52bebbb72c99.png"
+          alt="Adam Biyadi Cyber Layer Reveal"
+          draggable="false"
+        />
+      </div>
+
+      <!-- Hero UI Overlay -->
+      <div class="hero-ui">
+        <!-- Top Left Section: Headline & Description with Subtle Dark Backdrop Gradient Overlay -->
+        <div class="hero-left">
+          <div class="hero-copy">
+            <div class="hero-badge">
+              <span class="badge-dot"></span> MULTIMEDIA &bull; CREATIVE DIRECTOR
+            </div>
+
+            <h1 class="hero-title words-pull-up">
+              <span>ADAM BIYADI</span>
+              <span>// NEURAL EDGES</span>
+            </h1>
+
+            <p class="hero-desc">
+              Directing cinematic video production, brand aesthetics, and interactive digital realms. Exploring the convergence of narrative pacing, ACES color pipelines, and procedural 3D.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="mailto:adambiyadi5@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20Adam%20Biyadi" class="hero-cta-btn" id="hero-inquire-btn">
+                <span>INQUIRE PROJECT</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <button class="icon-btn" aria-label="Copy Email" type="button" id="copy-email-btn" title="Copy Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg>
+              </button>
+              <button class="icon-btn" aria-label="Watch Showreel" type="button" id="reel-btn" title="Watch Showreel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="6 3 20 12 6 21 6 3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Right Section: Sleek Portfolio Header with Glassmorphism & Availability Pill -->
+        <div class="hero-top-right">
+          <div class="portfolio-header-card">
+            <div class="portfolio-brand">
+              <span class="portfolio-name">ADAM BIYADI</span>
+              <span class="portfolio-tag">// PORTFOLIO</span>
+            </div>
+
+            <div class="nav-divider"></div>
+
+            <nav class="portfolio-nav">
+              <a href="#about" class="nav-link" data-nav="about">ABOUT</a>
+              <a href="#pipeline" class="nav-link" data-nav="pipeline">PIPELINE</a>
+              <a href="#works" class="nav-link" data-nav="works">WORKS</a>
+              <a href="#vfx" class="nav-link" data-nav="vfx">VFX</a>
+              <a href="#web" class="nav-link" data-nav="web">WEB</a>
+              <a href="#contact" class="nav-link" data-nav="contact">CONTACT</a>
+            </nav>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Day / Night mode" type="button">
+              <span class="toggle-icon-wrap">
+                <svg class="theme-icon icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="m4.93 4.93 1.41 1.41" />
+                  <path d="m17.66 17.66 1.41 1.41" />
+                  <path d="M2 12h2" />
+                  <path d="M20 12h2" />
+                  <path d="m6.34 17.66-1.41 1.41" />
+                  <path d="m19.07 4.93-1.41 1.41" />
+                </svg>
+                <svg class="theme-icon icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                </svg>
+              </span>
+              <span class="theme-label" id="theme-label">DAY</span>
+            </button>
+          </div>
+
+          <div class="status-pill">
+            <span class="status-pill-dot"></span>
+            <span>AVAILABLE FOR SELECT COMMISSIONS</span>
+          </div>
+        </div>
+
+        <!-- Center Bottom: Glassmorphic Scroll Indicator Pill -->
+        <div class="hero-center-bottom">
+          <a href="#about" class="scroll-indicator-pill" id="hero-scroll-btn" aria-label="Scroll to Section 2: About & Skills">
+            <span>SCROLL TO EXPLORE // ABOUT &amp; SKILLS</span>
+            <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- =========================================================
+         2. SECTION 2: "ABOUT & SKILLS" (02 // ABOUT & SKILLS)
+         Seamless neutral frosted glass backdrop with subtle blur
+         ========================================================= -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <!-- Section Header -->
+        <div class="about-header scroll-reveal">
+          <div class="about-tag">
+            <span class="badge-dot"></span>
+            <span>CREATIVE DIRECTION &amp; MULTIMEDIA</span>
+          </div>
+          <div class="about-eyebrow">02 // ABOUT &amp; SKILLS</div>
+          <h2 class="about-title">ABOUT ADAM BIYADI</h2>
+          <p class="about-subtitle">
+            Bridging high-impact cinematic filmmaking with procedural 3D art and mathematical ACES color science to forge unforgettable visual worlds.
+          </p>
+        </div>
+
+        <!-- Asymmetric 2-Column Split Layout -->
+        <div class="about-split-layout">
+          <!-- Left Side: Portrait Card in a tall vertical rounded glass frame (rounded-2xl) -->
+          <div class="portrait-card scroll-reveal" data-delay="0.1">
+            <div class="portrait-glass-frame">
+              <img
+                src="./assets/adam.jpg"
+                alt="Adam Biyadi — Creative Direction & Multimedia"
+                class="portrait-photo"
+                loading="lazy"
+                onerror="this.src='/a79521a9-a040-495e-b8ed-975d8334c177.png'"
+              />
+              <div class="portrait-vignette"></div>
+              <div class="portrait-inner-sheen"></div>
+              <div class="portrait-badge">
+                <span class="badge-dot"></span>
+                <span>ADAM BIYADI // DIRECTIVE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Content Column (Clean, spacious layout for About bio, Skills, and Key Metrics) -->
+          <div class="about-content-col">
+            <!-- 1. Bio & Philosophy (Single elegant, impactful merged text block) -->
+            <div class="executive-card scroll-reveal" data-delay="0.2">
+              <div class="card-inner-sheen"></div>
+              <div class="content-eyebrow">DIRECTOR'S STATEMENT</div>
+              <h3 class="executive-card-title">CINEMATIC INTENTION &amp; BESPOKE PIPELINES</h3>
+              <p class="bio-lead">
+                Every frame is crafted with discipline and intention. Rather than relying on generic editing presets or automated templates, I architect <strong>bespoke end-to-end production pipelines</strong>—seamlessly merging physical camera cinematography with <strong>procedural 3D art</strong> and mathematical <strong>ACES color science</strong>. Collaborating with visionary brands, directors, and cultural labels, my directive is singular: transform complex narratives into polished, high-impact visual stories that command attention and stand the test of time.
+              </p>
+            </div>
+
+            <!-- 2. Skills: 4 Core Pillars (2x2 Compact Grid) -->
+            <div class="executive-card scroll-reveal" data-delay="0.3">
+              <div class="card-inner-sheen"></div>
+              <div class="skills-header-row">
+                <div class="content-eyebrow">CORE COMPETENCIES</div>
+                <span class="skills-meta-pill">4 CORE PILLARS</span>
+              </div>
+              <h3 class="executive-card-title">SPECIALIZED WORKFLOWS &amp; CAPABILITIES</h3>
+              
+              <div class="skills-pillars-grid">
+                <!-- Pillar 1: Post-Production & Color Science — 85% -->
+                <div class="skill-pillar-item">
+                  <div class="pillar-header">
+                    <div class="pillar-info">
+                      <span class="pillar-title">Post-Production &amp; Color Science</span>
+                      <span class="pillar-desc">Editing, Videography, ACES</span>
+                    </div>
+                    <span class="pillar-percent">85%</span>
+                  </div>
+                  <div class="skill-progress-track">
+                    <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                  </div>
+                </div>
+
+                <!-- Pillar 2: Brand & Visual Design — 85% -->
+                <div class="skill-pillar-item">
+                  <div class="pillar-header">
+                    <div class="pillar-info">
+                      <span class="pillar-title">Brand &amp; Visual Design</span>
+                      <span class="pillar-desc">Design, Photography, Visual Direction</span>
+                    </div>
+                    <span class="pillar-percent">85%</span>
+                  </div>
+                  <div class="skill-progress-track">
+                    <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                  </div>
+                </div>
+
+                <!-- Pillar 3: AI Architecture & Web Dev — 80% -->
+                <div class="skill-pillar-item">
+                  <div class="pillar-header">
+                    <div class="pillar-info">
+                      <span class="pillar-title">AI Architecture &amp; Web Dev</span>
+                      <span class="pillar-desc">AI Workflows, Web Systems</span>
+                    </div>
+                    <span class="pillar-percent">80%</span>
+                  </div>
+                  <div class="skill-progress-track">
+                    <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                  </div>
+                </div>
+
+                <!-- Pillar 4: 3D Procedural & VFX — 60% -->
+                <div class="skill-pillar-item">
+                  <div class="pillar-header">
+                    <div class="pillar-info">
+                      <span class="pillar-title">3D Procedural &amp; VFX</span>
+                      <span class="pillar-desc">Blender, C4D, Compositing</span>
+                    </div>
+                    <span class="pillar-percent">60%</span>
+                  </div>
+                  <div class="skill-progress-track">
+                    <div class="skill-progress-fill" style="--percent: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Key Metrics Footer: Sleek horizontal row -->
+            <div class="metrics-row scroll-reveal" data-delay="0.4">
+              <div class="card-inner-sheen"></div>
+              <div class="metric-item">
+                <span class="metric-value">5+ Years</span>
+                <span class="metric-label">Direction &amp; Post-Production</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Bespoke Procedural Pipelines</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-value">Global</span>
+                <span class="metric-label">Remote Availability (Casablanca / London / NYC)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom of Section 2: Scroll Indicator Pill to Pipeline & Works -->
+        <div class="scroll-indicator-wrap scroll-reveal" data-delay="0.45">
+          <a href="#pipeline" class="scroll-indicator-pill" aria-label="Explore Production Suite and Pipeline">
+            <span>EXPLORE PRODUCTION PIPELINE</span>
+            <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         2B. SECTION 2B: PRODUCTION SUITE & PIPELINE (#pipeline)
+         Industry-standard creative software arsenal & ACES pipeline
+         ========================================================= -->
+    <div id="pipeline-react-root"></div>
+
+    <!-- =========================================================
+         3. SECTION 3: "03 // OUR WORK" (SELECTED WORKS VIDEO SHOWCASE)
+         Seamless dark neutral frosted glass backdrop with subtle blur
+         ========================================================= -->
+    <section class="works-section" id="works">
+      <div class="works-container">
+        <!-- Section Header -->
+        <div class="works-header scroll-reveal-down">
+          <div class="works-tag">
+            <span class="badge-dot"></span>
+            <span>03 // SELECTED WORKS</span>
+          </div>
+          <h2 class="works-title">CINEMATIC HIGHLIGHTS &amp; EVENT COVERAGE</h2>
+          <p class="works-subtitle">
+            Executive best-off reels and high-impact event visual storytelling.
+          </p>
+        </div>
+
+        <!-- 2-Column Video Portfolio Grid -->
+        <div class="works-grid">
+          <!-- Card 1: Almoultaqa Foundation -->
+          <article class="work-card scroll-reveal-left" data-delay="0.1" data-video-src="/almoultaqa.mp4" data-video-title="ALMOULTAQA FOUNDATION // EXECUTIVE AFTERMOVIE">
+            <div class="work-video-wrapper">
+              <video
+                class="work-video-preview"
+                src="/almoultaqa.mp4"
+                preload="metadata"
+                muted
+                playsinline
+                loop
+              ></video>
+              <div class="video-overlay-gradient"></div>
+              
+              <!-- Custom Glass Play Button -->
+              <button class="video-play-btn" type="button" aria-label="Play Almoultaqa Foundation video">
+                <span class="play-btn-glow"></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                </svg>
+              </button>
+
+              <div class="video-duration-badge">
+                <span class="video-live-dot"></span>
+                <span>HIGHLIGHT REEL</span>
+              </div>
+            </div>
+
+            <div class="work-card-content">
+              <div class="work-tags-row">
+                <span class="work-tag active">Event Cinematography</span>
+                <span class="work-tag">Executive Aftermovie</span>
+                <span class="work-tag active">ACES Color</span>
+              </div>
+
+              <h3 class="work-card-title">ALMOULTAQA FOUNDATION</h3>
+              
+              <p class="work-card-desc">
+                Cinematic highlight film documenting foundation proceedings, executive keynotes, and high-impact storytelling.
+              </p>
+
+              <div class="work-card-footer">
+                <span class="watch-action-text">
+                  <span>WATCH FULL REEL</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </span>
+                <span class="work-meta-year">2026 DIRECTIVE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Front des Forces Démocratiques — 7th Congress -->
+          <article class="work-card scroll-reveal-right" data-delay="0.2" data-video-src="/benali%20video.mp4" data-video-title="FRONT DES FORCES DÉMOCRATIQUES — 7TH CONGRESS">
+            <div class="work-video-wrapper">
+              <video
+                class="work-video-preview"
+                src="/benali%20video.mp4"
+                preload="metadata"
+                muted
+                playsinline
+                loop
+              ></video>
+              <div class="video-overlay-gradient"></div>
+              
+              <!-- Custom Glass Play Button -->
+              <button class="video-play-btn" type="button" aria-label="Play Benali Congress video">
+                <span class="play-btn-glow"></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                </svg>
+              </button>
+
+              <div class="video-duration-badge">
+                <span class="video-live-dot"></span>
+                <span>NATIONAL EVENT</span>
+              </div>
+            </div>
+
+            <div class="work-card-content">
+              <div class="work-tags-row">
+                <span class="work-tag active">Political Campaign</span>
+                <span class="work-tag">National Event Best-Of</span>
+                <span class="work-tag active">Post-Production</span>
+              </div>
+
+              <h3 class="work-card-title">FRONT DES FORCES DÉMOCRATIQUES — 7TH CONGRESS</h3>
+              
+              <p class="work-card-desc">
+                High-energy best-of documentary coverage highlighting official speeches, political congress proceedings, and crowd dynamics.
+              </p>
+
+              <div class="work-card-footer">
+                <span class="watch-action-text">
+                  <span>WATCH FULL REEL</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </span>
+                <span class="work-meta-year">2026 CAMPAIGN</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom of Section 3 (Works): Scroll Indicator Pill to Reels -->
+        <div class="scroll-indicator-wrap scroll-reveal" data-delay="0.25">
+          <a href="#reels" class="scroll-indicator-pill" aria-label="View Short-Form Reels">
+            <span>VIEW SHORT-FORM REELS</span>
+            <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- =========================================================
+             03B // SHORT-FORM REELS & VIRAL CONTENT
+             Responsive 9:16 Vertical Video Grid (4 Reels Showcase)
+             ========================================================= -->
+        <div class="reels-subsection" id="reels">
+          <!-- Subsection Header -->
+          <div class="reels-header scroll-reveal-down">
+            <div class="reels-tag">
+              <span class="badge-dot"></span>
+              <span>SHORT-FORM CONTENT</span>
+            </div>
+            <h3 class="reels-title">VERTICAL REELS &amp; VIRAL PRODUCTION</h3>
+            <p class="reels-subtitle">
+              High-retention Reels, BTS Cinematography, and Commercial Ads.
+            </p>
+          </div>
+
+          <!-- Responsive 9:16 Vertical Video Grid (4 Reels Showcase) -->
+          <div class="reels-grid">
+            <!-- Reel 1: AI VOICE & AUDIO WORKFLOWS -->
+            <article class="reel-card scroll-reveal" data-delay="0" data-video-src="/reel1.mp4" data-video-title="AI VOICE &amp; AUDIO WORKFLOWS // MAGIC STUDIO" data-vertical="true">
+              <div class="reel-video-wrapper">
+                <video
+                  class="reel-video-preview"
+                  src="/reel1.mp4"
+                  preload="metadata"
+                  muted
+                  playsinline
+                  loop
+                ></video>
+                <div class="reel-overlay-gradient"></div>
+                <div class="reel-badge">
+                  <span class="video-live-dot"></span>
+                  <span>9:16 REEL</span>
+                </div>
+                
+                <button class="reel-play-btn" type="button" aria-label="Play AI Voice Reel">
+                  <span class="reel-play-glow"></span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                  </svg>
+                </button>
+
+                <div class="reel-info-overlay">
+                  <div class="reel-tags-row">
+                    <span class="reel-tag active">Magic Studio</span>
+                    <span class="reel-tag">AI Tech Reel</span>
+                  </div>
+                  <h4 class="reel-title">AI VOICE &amp; AUDIO WORKFLOWS</h4>
+                </div>
+              </div>
+            </article>
+
+            <!-- Reel 2: PIXWAVE AGENCY BRAND PROMO -->
+            <article class="reel-card scroll-reveal" data-delay="0.15" data-video-src="/reel2.mp4" data-video-title="PIXWAVE AGENCY BRAND PROMO" data-vertical="true">
+              <div class="reel-video-wrapper">
+                <video
+                  class="reel-video-preview"
+                  src="/reel2.mp4"
+                  preload="metadata"
+                  muted
+                  playsinline
+                  loop
+                ></video>
+                <div class="reel-overlay-gradient"></div>
+                <div class="reel-badge">
+                  <span class="video-live-dot"></span>
+                  <span>9:16 REEL</span>
+                </div>
+
+                <button class="reel-play-btn" type="button" aria-label="Play Pixwave Agency Reel">
+                  <span class="reel-play-glow"></span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                  </svg>
+                </button>
+
+                <div class="reel-info-overlay">
+                  <div class="reel-tags-row">
+                    <span class="reel-tag active">Digital Marketing</span>
+                    <span class="reel-tag">Spokesperson</span>
+                  </div>
+                  <h4 class="reel-title">PIXWAVE AGENCY BRAND PROMO</h4>
+                </div>
+              </div>
+            </article>
+
+            <!-- Reel 3: THE SHOT VS THE SETUP -->
+            <article class="reel-card scroll-reveal" data-delay="0.30" data-video-src="/reel3.mp4" data-video-title="THE SHOT VS THE SETUP // CINEMATOGRAPHY BTS" data-vertical="true">
+              <div class="reel-video-wrapper">
+                <video
+                  class="reel-video-preview"
+                  src="/reel3.mp4"
+                  preload="metadata"
+                  muted
+                  playsinline
+                  loop
+                ></video>
+                <div class="reel-overlay-gradient"></div>
+                <div class="reel-badge">
+                  <span class="video-live-dot"></span>
+                  <span>9:16 REEL</span>
+                </div>
+
+                <button class="reel-play-btn" type="button" aria-label="Play Shot vs Setup Reel">
+                  <span class="reel-play-glow"></span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                  </svg>
+                </button>
+
+                <div class="reel-info-overlay">
+                  <div class="reel-tags-row">
+                    <span class="reel-tag active">Cinematography BTS</span>
+                    <span class="reel-tag">Lighting Setup</span>
+                  </div>
+                  <h4 class="reel-title">THE SHOT VS THE SETUP</h4>
+                </div>
+              </div>
+            </article>
+
+            <!-- Reel 4: PRODUCT LIGHTING & STUDIO MAGIC -->
+            <article class="reel-card scroll-reveal" data-delay="0.45" data-video-src="/reel4.mp4" data-video-title="WELCOME TO MAGIC STUDIO // PRODUCT LIGHTING" data-vertical="true">
+              <div class="reel-video-wrapper">
+                <video
+                  class="reel-video-preview"
+                  src="/reel4.mp4"
+                  preload="metadata"
+                  muted
+                  playsinline
+                  loop
+                ></video>
+                <div class="reel-overlay-gradient"></div>
+                <div class="reel-badge">
+                  <span class="video-live-dot"></span>
+                  <span>9:16 REEL</span>
+                </div>
+
+                <button class="reel-play-btn" type="button" aria-label="Play Magic Studio Reel">
+                  <span class="reel-play-glow"></span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                  </svg>
+                </button>
+
+                <div class="reel-info-overlay">
+                  <div class="reel-tags-row">
+                    <span class="reel-tag active">Product Commercial</span>
+                    <span class="reel-tag">Lighting Design</span>
+                  </div>
+                  <h4 class="reel-title">PRODUCT LIGHTING &amp; STUDIO MAGIC</h4>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bottom of Section 3B (Reels): Scroll Indicator Pill to VFX Section -->
+          <div class="scroll-indicator-wrap scroll-reveal" data-delay="0.45">
+            <a href="#vfx" class="scroll-indicator-pill" aria-label="Explore VFX & 3D Breakdown">
+              <span>EXPLORE VFX &amp; 3D BREAKDOWN</span>
+              <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             03C // VFX & PROCEDURAL COMPOSITING (#vfx)
+             Dedicated VFX Breakdown, 3D Tracking, & Procedural Pipeline
+             ========================================================= -->
+        <div class="vfx-subsection" id="vfx">
+          <!-- Subsection Header -->
+          <div class="vfx-header scroll-reveal-down">
+            <div class="vfx-tag">
+              <span class="badge-dot"></span>
+              <span>VFX &amp; 3D BREAKDOWN</span>
+            </div>
+            <h3 class="vfx-title">COMPOSITING &amp; PROCEDURAL 3D PIPELINES</h3>
+            <p class="vfx-subtitle">
+              Raw footage, 3D face tracking, nodal compositing, and CGI element integration.
+            </p>
+          </div>
+
+          <!-- VFX Showcase Glass Card -->
+          <div class="vfx-showcase-container scroll-reveal" data-delay="0.15">
+            <article class="vfx-glass-card" data-video-src="/portfolio_vfx.mp4" data-video-title="VFX BREAKDOWN // PROCEDURAL 3D &amp; COMPOSITING" data-vertical="true">
+              <!-- Video Viewport Frame -->
+              <div class="vfx-video-col">
+                <div class="vfx-video-viewport">
+                  <video
+                    class="vfx-video-preview"
+                    src="/portfolio_vfx.mp4"
+                    poster="/vfx_breakdown_thumb.jpg"
+                    preload="metadata"
+                    muted
+                    playsinline
+                    loop
+                    autoplay
+                  ></video>
+                  <div class="vfx-video-overlay-gradient"></div>
+
+                  <!-- Live 3-Tier Breakdown / 9:16 Tag -->
+                  <div class="vfx-status-badge">
+                    <span class="video-live-dot"></span>
+                    <span>3-TIER BREAKDOWN // 9:16</span>
+                  </div>
+
+                  <!-- Custom Frosted Play Button Overlay -->
+                  <button class="vfx-play-btn" type="button" aria-label="Play full VFX breakdown in 4K Lightbox">
+                    <span class="vfx-play-glow"></span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z"/>
+                    </svg>
+                  </button>
+
+                  <div class="vfx-click-hint">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6"/>
+                      <path d="M10 14 21 3"/>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    </svg>
+                    <span>CLICK FOR 4K LIGHTBOX</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technical Details & Spec Badges Column -->
+              <div class="vfx-details-col">
+                <div class="vfx-details-header">
+                  <div class="vfx-spec-pill">
+                    <span class="badge-dot"></span>
+                    <span>MULTI-TIER VFX COMPOSITING</span>
+                  </div>
+                  <h4 class="vfx-card-title">CGI FACE INTEGRATION &amp; DYNAMIC CANDLE SIMULATION</h4>
+                  <p class="vfx-card-desc">
+                    Synchronized split-screen breakdown demonstrating high-precision facial geometry tracking, procedural smoke/wax dynamics in Blender, and multi-layer ACEScg compositing.
+                  </p>
+                </div>
+
+                <!-- Technical Spec Badges -->
+                <div class="vfx-specs-list">
+                  <!-- Spec 1: FINAL COMP -->
+                  <div class="vfx-spec-item">
+                    <div class="vfx-spec-head">
+                      <span class="vfx-spec-badge badge-final">[FINAL COMP]</span>
+                      <span class="vfx-spec-tag">ACEScg Output</span>
+                    </div>
+                    <p class="vfx-spec-text">
+                      ACES Color &amp; CGI Candle Simulation with physically accurate subsurface scattering, volumetric smoke dissipation, and dynamic lighting bounce on subject skin.
+                    </p>
+                  </div>
+
+                  <!-- Spec 2: NODAL TIMELINE -->
+                  <div class="vfx-spec-item">
+                    <div class="vfx-spec-head">
+                      <span class="vfx-spec-badge badge-nodal">[NODAL TIMELINE]</span>
+                      <span class="vfx-spec-tag">3D Scene Solve</span>
+                    </div>
+                    <p class="vfx-spec-text">
+                      Blender 3D Motion Tracking &amp; Procedural Nodes driving procedural wick flame physics, surface tension simulations, and optical lens distortion matching.
+                    </p>
+                  </div>
+
+                  <!-- Spec 3: RAW SHOT -->
+                  <div class="vfx-spec-item">
+                    <div class="vfx-spec-head">
+                      <span class="vfx-spec-badge badge-raw">[RAW SHOT]</span>
+                      <span class="vfx-spec-tag">Production Plate</span>
+                    </div>
+                    <p class="vfx-spec-text">
+                      Practical Mask Lighting &amp; Face Marker Tracking captured with calibrated key lighting and high-contrast facial reference tracking points.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Action Button Row -->
+                <div class="vfx-action-row">
+                  <button type="button" class="vfx-launch-modal-btn">
+                    <span>WATCH FULL RESOLUTION BREAKDOWN</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6"/>
+                      <path d="M10 14 21 3"/>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    </svg>
+                  </button>
+                  <span class="vfx-meta-runtime">30 FPS • 1080×1920 MASTER</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bottom of Section 3C (VFX): Scroll Indicator Pill to Web Development Projects -->
+          <div class="scroll-indicator-wrap scroll-reveal" data-delay="0.3">
+            <a href="#web" class="scroll-indicator-pill" aria-label="Explore Web Development Projects">
+              <span>EXPLORE WEB PLATFORMS</span>
+              <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. SECTION 4: "DIGITAL EXPERIENCES & WEB PLATFORMS" (#web)
+         Bespoke digital platforms, custom web applications, & conversion-focused web design
+         ========================================================= -->
+    <section class="web-section" id="web">
+      <div class="web-container">
+        <!-- Section Header -->
+        <div class="web-header scroll-reveal-down">
+          <div class="works-tag">
+            <span class="badge-dot"></span>
+            <span>DIGITAL EXPERIENCES &amp; WEB PLATFORMS</span>
+          </div>
+          <h2 class="web-title">CRAFTING HIGH-PERFORMANCE WEBSITES</h2>
+          <p class="web-subtitle">
+            Bespoke digital platforms, custom web applications, and conversion-focused web design.
+          </p>
+        </div>
+
+        <!-- Web Showcase 2-Column Desktop Grid -->
+        <div class="web-grid">
+          <!-- Card 1: Maison de Campagne -->
+          <article class="web-card scroll-reveal-left" data-delay="0.1">
+            <!-- Browser Mockup Top Bar -->
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <svg class="ssl-lock-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span class="browser-url-text">https://www.maisondecampagne.ma/</span>
+              </div>
+              <a href="https://www.maisondecampagne.ma/" target="_blank" rel="noopener noreferrer" class="browser-ext-badge" aria-label="Open Maison de Campagne in new tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"/>
+                  <path d="M10 14 21 3"/>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Fixed-height Visual Image Viewport Frame with Smooth Vertical Hover-Scroll -->
+            <div class="browser-viewport-frame group-screen">
+              <div class="web-screenshot-scroll-wrap">
+                <img
+                  src="/maison_preview.jpg"
+                  alt="Maison de Campagne Luxury Country House Website Preview"
+                  class="web-screenshot-img"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Subtle Dark Vignette Overlay Gradient -->
+              <div class="browser-vignette-overlay"></div>
+              <!-- Live Visual Preview Overlay Tag -->
+              <div class="preview-hover-hint-pill">
+                <span>👁️</span>
+                <span>HOVER TO SCROLL HOMEPAGE</span>
+              </div>
+            </div>
+
+            <!-- Card Body & Details -->
+            <div class="web-card-body">
+              <span class="web-category-tag">LUXURY HOSPITALITY &amp; BOOKING PLATFORM</span>
+              <h3 class="web-card-title">Maison de Campagne</h3>
+              
+              <a href="https://www.maisondecampagne.ma/" target="_blank" rel="noopener noreferrer" class="web-url-preview-link">
+                <span>https://www.maisondecampagne.ma/</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"/>
+                  <path d="M10 14 21 3"/>
+                </svg>
+              </a>
+
+              <p class="web-card-desc">
+                Bespoke luxury country house booking platform designed for high conversions, interactive visual showcases, and seamless user experience.
+              </p>
+
+              <div class="web-tags-row">
+                <span class="web-tag-pill">Web Design</span>
+                <span class="web-tag-pill">Custom Booking</span>
+                <span class="web-tag-pill">Meta Pixel Integration</span>
+                <span class="web-tag-pill">Responsive UI</span>
+              </div>
+
+              <div class="web-card-footer">
+                <span class="web-meta-status">
+                  <span class="video-live-dot"></span>
+                  <span>PRODUCTION READY</span>
+                </span>
+                <a href="https://www.maisondecampagne.ma/" target="_blank" rel="noopener noreferrer" class="web-cta-btn">
+                  <span>VISIT LIVE PLATFORM</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6"/>
+                    <path d="M10 14 21 3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Al Monatif 24 (A24) -->
+          <article class="web-card scroll-reveal-right" data-delay="0.2">
+            <!-- Browser Mockup Top Bar -->
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <svg class="ssl-lock-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span class="browser-url-text">https://a24.ma/</span>
+              </div>
+              <a href="https://a24.ma/" target="_blank" rel="noopener noreferrer" class="browser-ext-badge" aria-label="Open Al Monatif 24 in new tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"/>
+                  <path d="M10 14 21 3"/>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Fixed-height Visual Image Viewport Frame with Smooth Vertical Hover-Scroll -->
+            <div class="browser-viewport-frame group-screen">
+              <div class="web-screenshot-scroll-wrap">
+                <img
+                  src="/a24_preview.jpg"
+                  alt="Al Monatif 24 (A24) Digital Media Portal Website Preview"
+                  class="web-screenshot-img"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Subtle Dark Vignette Overlay Gradient -->
+              <div class="browser-vignette-overlay"></div>
+              <!-- Live Visual Preview Overlay Tag -->
+              <div class="preview-hover-hint-pill">
+                <span>👁️</span>
+                <span>HOVER TO SCROLL HOMEPAGE</span>
+              </div>
+            </div>
+
+            <!-- Card Body & Details -->
+            <div class="web-card-body">
+              <span class="web-category-tag">DIGITAL MEDIA &amp; NEWS PORTAL</span>
+              <h3 class="web-card-title">Al Monatif 24</h3>
+              
+              <a href="https://a24.ma/" target="_blank" rel="noopener noreferrer" class="web-url-preview-link">
+                <span>https://a24.ma/</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"/>
+                  <path d="M10 14 21 3"/>
+                </svg>
+              </a>
+
+              <p class="web-card-desc">
+                High-traffic news and digital media portal optimized for lighting-fast load times, fluid media distribution, and high-contrast editorial typography.
+              </p>
+
+              <div class="web-tags-row">
+                <span class="web-tag-pill">Media Portal</span>
+                <span class="web-tag-pill">Speed Optimization</span>
+                <span class="web-tag-pill">Dynamic CMS</span>
+                <span class="web-tag-pill">UI/UX</span>
+              </div>
+
+              <div class="web-card-footer">
+                <span class="web-meta-status">
+                  <span class="video-live-dot"></span>
+                  <span>HIGH-TRAFFIC OPTIMIZED</span>
+                </span>
+                <a href="https://a24.ma/" target="_blank" rel="noopener noreferrer" class="web-cta-btn">
+                  <span>VISIT LIVE PLATFORM</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6"/>
+                    <path d="M10 14 21 3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom of Web Section: Scroll Indicator Pill to Contact -->
+        <div class="scroll-indicator-wrap scroll-reveal" data-delay="0.3">
+          <a href="#contact" class="scroll-indicator-pill" aria-label="Contact Adam Biyadi">
+            <span>LET'S BUILD TOGETHER // CONTACT</span>
+            <svg class="pill-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. SECTION 5: FOOTER & CONTACT (#contact)
+         Ultra-sleek executive glassmorphic directive footer
+         ========================================================= -->
+    <footer class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-card scroll-reveal">
+          <div class="card-inner-sheen"></div>
+          <div class="works-tag">
+            <span class="badge-dot"></span>
+            <span>05 // CONNECT &amp; COLLABORATE</span>
+          </div>
+          <h2 class="contact-title">LET'S BUILD SOMETHING EXTRAORDINARY</h2>
+          <p class="contact-desc">
+            Available for select commissions, executive commercial direction, and end-to-end bespoke visual storytelling worldwide.
+          </p>
+          <div class="contact-actions">
+            <!-- 1. Direct WhatsApp Button -->
+            <a
+              href="https://wa.me/212773186066?text=Hello%20Adam,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-whatsapp-btn"
+              aria-label="Direct WhatsApp Message"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              <span>WHATSAPP CHAT</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7"/>
+                <path d="M7 7h10v10"/>
+              </svg>
+            </a>
+
+            <!-- 2. Direct Email Mailto Button -->
+            <a
+              href="mailto:adambiyadi5@gmail.com?subject=Project%20Inquiry%20-%20Adam%20Biyadi"
+              class="contact-email-btn"
+              aria-label="Direct Email Adam Biyadi"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span>adambiyadi5@gmail.com</span>
+            </a>
+
+            <!-- 3. Copy Email Button with feedback -->
+            <button
+              type="button"
+              class="contact-copy-btn"
+              id="footer-copy-email-btn"
+              aria-label="Copy email address"
+            >
+              <svg class="copy-default-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+              </svg>
+              <span class="copy-btn-text">COPY EMAIL</span>
+            </button>
+          </div>
+
+          <!-- Direct Phone & Operational Details strip -->
+          <div class="contact-details-strip">
+            <div class="strip-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>+212 773-186066</span>
+              <span style="opacity: 0.6;">(Local: 0773186066)</span>
+            </div>
+            <div class="strip-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>Response: &lt; 12 Hours</span>
+            </div>
+            <div class="strip-item">
+              <span class="video-live-dot" style="margin-right: 2px;"></span>
+              <span>Available for Select Q2/Q3 Commissions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-meta-row">
+          <span>CASABLANCA • LONDON • NYC</span>
+          <span>© 2026 ADAM BIYADI. ALL RIGHTS RESERVED.</span>
+          <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
+            <span>BACK TO TOP ↑</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fullscreen / Lightbox Video Modal -->
+    <div id="video-modal" class="video-modal" aria-hidden="true" role="dialog" aria-label="Video Player Modal">
+      <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+      <div class="video-modal-container">
+        <div class="video-modal-header">
+          <div class="video-modal-title-wrap">
+            <span class="video-modal-badge">4K MASTER</span>
+            <h4 id="video-modal-title" class="video-modal-title">VIDEO TITLE</h4>
+          </div>
+          <button id="video-modal-close" class="video-modal-close-btn" aria-label="Close video player" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="video-modal-player-wrap">
+          <video id="modal-video-player" class="modal-video-player" controls playsinline></video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Toast -->
+    <div id="toast" class="toast">Email copied to clipboard!</div>
+
+    <!-- JavaScript (Vanilla, IIFE) -->
+    <script>
+      (function () {
+        function init() {
+          // 0. DYNAMIC THEME SYSTEM (Day / Night Mode)
+          var themeToggleBtn = document.getElementById('theme-toggle');
+          var themeLabel = document.getElementById('theme-label');
+
+          function applyTheme(theme) {
+            if (theme === 'dark') {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              document.documentElement.classList.add('dark');
+              if (themeLabel) themeLabel.textContent = 'NIGHT';
+              if (themeToggleBtn) themeToggleBtn.setAttribute('title', 'Switch to Day mode');
+            } else {
+              document.documentElement.removeAttribute('data-theme');
+              document.documentElement.classList.remove('dark');
+              if (themeLabel) themeLabel.textContent = 'DAY';
+              if (themeToggleBtn) themeToggleBtn.setAttribute('title', 'Switch to Night mode');
+            }
+          }
+
+          var savedTheme = null;
+          try {
+            savedTheme = localStorage.getItem('cyber-ronin-theme');
+          } catch (e) {}
+
+          if (savedTheme === 'dark' || savedTheme === 'light') {
+            applyTheme(savedTheme);
+          } else {
+            var currentHour = new Date().getHours();
+            var isNightTime = currentHour >= 18 || currentHour < 6;
+            applyTheme(isNightTime ? 'dark' : 'light');
+          }
+
+          if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function () {
+              var isCurrentDark = document.documentElement.getAttribute('data-theme') === 'dark' || document.documentElement.classList.contains('dark');
+              var newTheme = isCurrentDark ? 'light' : 'dark';
+              applyTheme(newTheme);
+              try {
+                localStorage.setItem('cyber-ronin-theme', newTheme);
+              } catch (e) {}
+            });
+          }
+
+          // 1. SMOOTH FEATHERED DUAL-LAYER SPOTLIGHT (No rings or borders)
+          var heroStage = document.getElementById('hero-stage') || document.querySelector('.hero');
+          var revealImg = document.getElementById('hero-reveal-img');
+          var rafId = null;
+
+          function renderSpotlight(clientX, clientY) {
+            if (!heroStage || !revealImg) return;
+            var rect = heroStage.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+            var x = clientX - rect.left;
+            var y = clientY - rect.top;
+
+            var width = window.innerWidth;
+            var r = 220;
+            if (width < 480) {
+              r = 130;
+            } else if (width < 768) {
+              r = 170;
+            }
+
+            var mask = 'radial-gradient(circle ' + r + 'px at ' + x + 'px ' + y + 'px, black 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%)';
+            revealImg.style.webkitMaskImage = mask;
+            revealImg.style.maskImage = mask;
+
+            heroStage.style.setProperty('--x', x + 'px');
+            heroStage.style.setProperty('--y', y + 'px');
+            heroStage.style.setProperty('--spot-r', r + 'px');
+          }
+
+          function scheduleSpotlight(clientX, clientY) {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(function () {
+              renderSpotlight(clientX, clientY);
+            });
+          }
+
+          function resetSpotlight() {
+            if (rafId) cancelAnimationFrame(rafId);
+            if (revealImg) {
+              revealImg.style.webkitMaskImage = 'radial-gradient(circle 0px at -999px -999px, black, transparent)';
+              revealImg.style.maskImage = 'radial-gradient(circle 0px at -999px -999px, black, transparent)';
+            }
+            if (heroStage) {
+              heroStage.style.setProperty('--spot-r', '0px');
+              heroStage.style.setProperty('--x', '-999px');
+              heroStage.style.setProperty('--y', '-999px');
+            }
+          }
+
+          window.addEventListener('mousemove', function (e) {
+            scheduleSpotlight(e.clientX, e.clientY);
+          });
+
+          document.addEventListener('mouseleave', function () {
+            resetSpotlight();
+          });
+
+          window.addEventListener('touchmove', function (e) {
+            if (e.touches && e.touches.length > 0) {
+              scheduleSpotlight(e.touches[0].clientX, e.touches[0].clientY);
+            }
+          }, { passive: true });
+
+          window.addEventListener('touchstart', function (e) {
+            if (e.touches && e.touches.length > 0) {
+              scheduleSpotlight(e.touches[0].clientX, e.touches[0].clientY);
+            }
+          }, { passive: true });
+
+          window.addEventListener('touchend', function () {
+            resetSpotlight();
+          });
+
+          // 2. BACKGROUND SCROLL PARALLAX (Full background continuity across all sections)
+          window.addEventListener('scroll', function () {
+            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            if (heroStage) {
+              heroStage.style.transform = 'translateY(' + (scrollY * 0.08).toFixed(1) + 'px)';
+            }
+          }, { passive: true });
+
+          // 3. WORD SPLIT ANIMATION
+          var wordElements = document.querySelectorAll('.words-pull-up');
+          wordElements.forEach(function (el) {
+            if (el.dataset.split) return;
+            el.dataset.split = 'true';
+
+            var wordIndex = 0;
+            var tagName = el.tagName.toLowerCase();
+            var directSpans = el.querySelectorAll(':scope > span');
+
+            if (tagName === 'h1' && directSpans.length > 0) {
+              directSpans.forEach(function (span) {
+                span.classList.add('pull-line');
+                var text = span.textContent.trim();
+                var words = text ? text.split(/\s+/) : [];
+                span.textContent = '';
+                words.forEach(function (word) {
+                  if (!word) return;
+                  var wordSpan = document.createElement('span');
+                  wordSpan.className = 'pull-word';
+                  wordSpan.textContent = word;
+                  wordSpan.style.animationDelay = (wordIndex * 0.1).toFixed(2) + 's';
+                  span.appendChild(wordSpan);
+                  wordIndex++;
+                });
+              });
+            } else {
+              var text = el.textContent.trim();
+              var words = text ? text.split(/\s+/) : [];
+              el.textContent = '';
+              words.forEach(function (word) {
+                if (!word) return;
+                var wordSpan = document.createElement('span');
+                wordSpan.className = 'pull-word';
+                wordSpan.textContent = word;
+                wordSpan.style.animationDelay = (wordIndex * 0.1).toFixed(2) + 's';
+                el.appendChild(wordSpan);
+                wordIndex++;
+              });
+            }
+          });
+
+          // 4. CONTINUOUS BIDIRECTIONAL SCROLL REVEAL OBSERVER (Scroll Down & Scroll Up)
+          var revealEls = document.querySelectorAll('.scroll-reveal, .scroll-reveal-down, .scroll-reveal-left, .scroll-reveal-right');
+          if ('IntersectionObserver' in window) {
+            var scrollThreshold = window.innerWidth < 768 ? 0.15 : 0.20;
+            var revealObserver = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                var target = entry.target;
+                if (entry.isIntersecting) {
+                  // Entering screen: cancel any previous exit state and schedule reveal
+                  if (target._revealTimer) clearTimeout(target._revealTimer);
+                  var delay = parseFloat(target.getAttribute('data-delay') || '0');
+                  
+                  target._revealTimer = setTimeout(function () {
+                    target.classList.add('is-revealed');
+                    var fills = target.querySelectorAll('.skill-progress-fill');
+                    fills.forEach(function (fill) {
+                      var p = fill.style.getPropertyValue('--percent');
+                      if (p) fill.style.width = p;
+                    });
+
+                    // Ambient Neon Pulse on Lock-In for Reel Cards:
+                    if (target.classList.contains('reel-card')) {
+                      if (target._pulseTimer) clearTimeout(target._pulseTimer);
+                      target._pulseTimer = setTimeout(function () {
+                        target.classList.add('lock-in-pulse');
+                        setTimeout(function () {
+                          target.classList.remove('lock-in-pulse');
+                        }, 500);
+                      }, 500);
+                    }
+                  }, delay * 1000);
+                } else {
+                  // Exiting screen (scrolling away UP or DOWN): reset gracefully for continuous re-triggering
+                  if (target._revealTimer) {
+                    clearTimeout(target._revealTimer);
+                    target._revealTimer = null;
+                  }
+                  if (target._pulseTimer) {
+                    clearTimeout(target._pulseTimer);
+                    target._pulseTimer = null;
+                  }
+                  target.classList.remove('is-revealed');
+                  target.classList.remove('lock-in-pulse');
+                  var fills = target.querySelectorAll('.skill-progress-fill');
+                  fills.forEach(function (fill) {
+                    fill.style.width = '0%';
+                  });
+                }
+              });
+            }, {
+              threshold: scrollThreshold,
+              rootMargin: '0px 0px -20px 0px'
+            });
+
+            revealEls.forEach(function (el) {
+              revealObserver.observe(el);
+            });
+          } else {
+            revealEls.forEach(function (el) {
+              el.classList.add('is-revealed');
+              var fills = el.querySelectorAll('.skill-progress-fill');
+              fills.forEach(function (fill) {
+                var p = fill.style.getPropertyValue('--percent');
+                if (p) fill.style.width = p;
+              });
+            });
+          }
+
+          // Subtle vertical scroll parallax on Left Portrait Card
+          var portraitCard = document.querySelector('.portrait-card');
+          var aboutSection = document.getElementById('about');
+          window.addEventListener('scroll', function () {
+            if (!portraitCard || !aboutSection) return;
+            var rect = aboutSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              var offset = (rect.top - window.innerHeight / 2) * -0.04;
+              portraitCard.style.transform = 'translateY(' + offset.toFixed(1) + 'px)';
+            }
+          }, { passive: true });
+
+          // 5. SECTION 3 VIDEO CARDS & LIGHTBOX MODAL
+          var workCards = document.querySelectorAll('.work-card');
+          var reelCards = document.querySelectorAll('.reel-card');
+          var videoModal = document.getElementById('video-modal');
+          var videoModalClose = document.getElementById('video-modal-close');
+          var videoModalBackdrop = document.getElementById('video-modal-backdrop');
+          var modalVideoPlayer = document.getElementById('modal-video-player');
+          var videoModalTitle = document.getElementById('video-modal-title');
+          var videoModalContainer = videoModal ? videoModal.querySelector('.video-modal-container') : null;
+          var videoModalBadge = videoModal ? videoModal.querySelector('.video-modal-badge') : null;
+
+          // Hover preview: plays muted on hover for Selected Works
+          workCards.forEach(function (card) {
+            var previewVideo = card.querySelector('.work-video-preview');
+            if (previewVideo) {
+              card.addEventListener('mouseenter', function () {
+                previewVideo.play().catch(function () {});
+              });
+              card.addEventListener('mouseleave', function () {
+                previewVideo.pause();
+              });
+            }
+          });
+
+          // Hover preview: plays muted on hover for Vertical Reels
+          reelCards.forEach(function (card) {
+            var previewVideo = card.querySelector('.reel-video-preview');
+            if (previewVideo) {
+              card.addEventListener('mouseenter', function () {
+                previewVideo.play().catch(function () {});
+              });
+              card.addEventListener('mouseleave', function () {
+                previewVideo.pause();
+              });
+            }
+          });
+
+          function openVideoModal(src, title, isVertical) {
+            if (!videoModal || !modalVideoPlayer) return;
+            if (videoModalContainer) {
+              if (isVertical) {
+                videoModalContainer.classList.add('is-vertical');
+                if (videoModalBadge) videoModalBadge.textContent = '9:16 VERTICAL';
+              } else {
+                videoModalContainer.classList.remove('is-vertical');
+                if (videoModalBadge) videoModalBadge.textContent = '4K MASTER';
+              }
+            }
+            if (videoModalTitle) videoModalTitle.textContent = title || 'CINEMATIC SHOWCASE';
+            modalVideoPlayer.src = src;
+            videoModal.classList.add('is-open');
+            videoModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            modalVideoPlayer.play().catch(function () {});
+          }
+
+          function closeVideoModal() {
+            if (!videoModal || !modalVideoPlayer) return;
+            if (videoModalContainer) {
+              videoModalContainer.classList.remove('is-vertical');
+            }
+            modalVideoPlayer.pause();
+            modalVideoPlayer.currentTime = 0;
+            modalVideoPlayer.src = '';
+            videoModal.classList.remove('is-open');
+            videoModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          }
+
+          workCards.forEach(function (card) {
+            card.addEventListener('click', function (e) {
+              var src = card.getAttribute('data-video-src');
+              var title = card.getAttribute('data-video-title');
+              if (src) {
+                openVideoModal(src, title, false);
+              }
+            });
+          });
+
+          reelCards.forEach(function (card) {
+            card.addEventListener('click', function (e) {
+              var src = card.getAttribute('data-video-src');
+              var title = card.getAttribute('data-video-title');
+              var isVertical = card.getAttribute('data-vertical') === 'true';
+              if (src) {
+                openVideoModal(src, title, isVertical);
+              }
+            });
+          });
+
+          // VFX Breakdown Card & Video Lightbox
+          var vfxVideoCard = document.querySelector('.vfx-glass-card');
+          var vfxVideoViewport = document.querySelector('.vfx-video-viewport');
+          var vfxLaunchBtn = document.querySelector('.vfx-launch-modal-btn');
+          var vfxPreviewVideo = document.querySelector('.vfx-video-preview');
+
+          if (vfxPreviewVideo) {
+            vfxPreviewVideo.play().catch(function () {});
+            if (vfxVideoViewport) {
+              vfxVideoViewport.addEventListener('mouseenter', function () {
+                vfxPreviewVideo.play().catch(function () {});
+              });
+            }
+          }
+
+          function handleVfxClick(e) {
+            if (e) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            openVideoModal('/portfolio_vfx.mp4', 'VFX BREAKDOWN // PROCEDURAL 3D & COMPOSITING', true);
+          }
+
+          if (vfxVideoViewport) vfxVideoViewport.addEventListener('click', handleVfxClick);
+          if (vfxLaunchBtn) vfxLaunchBtn.addEventListener('click', handleVfxClick);
+
+          if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+          if (videoModalBackdrop) videoModalBackdrop.addEventListener('click', closeVideoModal);
+
+          window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && videoModal && videoModal.classList.contains('is-open')) {
+              closeVideoModal();
+            }
+          });
+
+          // 6. TOAST NOTIFICATIONS & INTERACTIONS
+          var copyBtn = document.getElementById('copy-email-btn');
+          var reelBtn = document.getElementById('reel-btn');
+          var heroScrollBtn = document.getElementById('hero-scroll-btn');
+          var toast = document.getElementById('toast');
+          var toastTimeout = null;
+
+          function showToast(msg) {
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.classList.add('show');
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(function () {
+              toast.classList.remove('show');
+            }, 2500);
+          }
+
+          function copyEmailHandler(e) {
+            if (e) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+
+            var activeBtn = e && e.currentTarget ? e.currentTarget : (footerCopyBtn || copyBtn);
+            var textSpan = activeBtn ? activeBtn.querySelector('.copy-btn-text') : null;
+            var originalText = textSpan ? textSpan.textContent : 'COPY EMAIL';
+
+            function setCopiedState() {
+              if (activeBtn) {
+                activeBtn.classList.add('is-copied');
+                if (textSpan) textSpan.textContent = 'COPIED!';
+                setTimeout(function () {
+                  activeBtn.classList.remove('is-copied');
+                  if (textSpan) textSpan.textContent = originalText;
+                }, 2000);
+              }
+              showToast('Email copied: adambiyadi5@gmail.com');
+            }
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText('adambiyadi5@gmail.com').then(function () {
+                setCopiedState();
+              }).catch(function () {
+                window.location.href = 'mailto:adambiyadi5@gmail.com';
+              });
+            } else {
+              window.location.href = 'mailto:adambiyadi5@gmail.com';
+            }
+          }
+
+          if (copyBtn) copyBtn.addEventListener('click', copyEmailHandler);
+          var footerCopyBtn = document.getElementById('footer-copy-email-btn');
+          if (footerCopyBtn) footerCopyBtn.addEventListener('click', copyEmailHandler);
+
+          if (reelBtn) {
+            reelBtn.addEventListener('click', function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var workEl = document.getElementById('works') || document.getElementById('work');
+              if (workEl) {
+                workEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          }
+
+          // Universal Smooth Scroll Routing for Scroll Indicator Pills and Anchor Links
+          var scrollPills = document.querySelectorAll('.scroll-indicator-pill, .scroll-down-btn, .back-to-top-btn');
+          scrollPills.forEach(function (pill) {
+            pill.addEventListener('click', function (e) {
+              var href = this.getAttribute('href');
+              if (href && href.startsWith('#')) {
+                var targetId = href.substring(1);
+                var targetEl = document.getElementById(targetId);
+                if (!targetEl && (targetId === 'works' || targetId === 'work')) {
+                  targetEl = document.getElementById('works') || document.getElementById('work');
+                }
+                if (targetEl) {
+                  e.preventDefault();
+                  targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            });
+          });
+
+          // Nav links interaction
+          var navLinks = document.querySelectorAll('.portfolio-nav .nav-link');
+          navLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              var navType = this.getAttribute('data-nav');
+              if (navType === 'contact') {
+                var contactEl = document.getElementById('contact');
+                if (contactEl) {
+                  e.preventDefault();
+                  contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  return;
+                }
+              }
+              if (navType === 'about') {
+                var aboutEl = document.getElementById('about');
+                if (aboutEl) {
+                  e.preventDefault();
+                  aboutEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+              }
+              if (navType === 'works') {
+                var workEl = document.getElementById('works') || document.getElementById('work');
+                if (workEl) {
+                  e.preventDefault();
+                  workEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+              }
+              if (navType === 'vfx') {
+                var vfxEl = document.getElementById('vfx');
+                if (vfxEl) {
+                  e.preventDefault();
+                  vfxEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+              }
+              if (navType === 'web') {
+                var webEl = document.getElementById('web');
+                if (webEl) {
+                  e.preventDefault();
+                  webEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+              }
+              if (navType === 'pipeline') {
+                e.preventDefault();
+                var pipeEl = document.getElementById('pipeline');
+                if (pipeEl) {
+                  pipeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  showToast('Pipeline: 4K Cinematography • VFX • ACES Color • Web Platforms');
+                }
+                return;
+              }
+            });
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+    <!-- React Main Module Entrypoint -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

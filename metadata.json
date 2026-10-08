@@ -1,0 +1,6 @@
+{
+  "name": "Cyber Ronin // Neural Edges",
+  "description": "Cyber Ronin // Neural Edges full-viewport cyberpunk hero section with interactive neural spotlight reveal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
